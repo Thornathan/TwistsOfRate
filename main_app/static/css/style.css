@@ -1,7 +1,15 @@
+html {
+  height: 100%;
+  background-color: #ffffff;
+}
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  height: 100%;
+  background-color: #ffffff;
+  background: url(/main_app/static/images/background2_2.svg);
 }
 
 main {
