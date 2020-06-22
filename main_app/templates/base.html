@@ -15,21 +15,30 @@
 </head>
 
 <body>
+
+  <!-- Adding additional bacground image -->
+  <img id="backgroundB" src="{% static "images/background1.svg" %}" alt="background">
+  <img id="backgroundA" src="{% static "images/background2.svg" %}" alt="background">
+
   <header class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
         <!-- Heading Left -->
         <ul>
           <li><a href="/" class="left brand-logo" id="headerText"
-              style="font-family: 'Pacifico', cursive; color: #6FFFE9;">&nbsp;&nbsp;<img src="{% static 'images/Logo.png' %}" alt="Logo"
-                style="width: 3rem;">&nbsp;Twists Of Rate</a></li>
+              style="font-family: 'Pacifico', cursive; color: #555555;">&nbsp;&nbsp;<img
+                src="{% static 'images/Logo.png' %}" alt="Logo" style="width: 3rem;">&nbsp;Twists Of Rate</a></li>
         </ul>
         <!-- Heading Center -->
         <div class="brand-logo center">
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown0'>About</a>
+          <ul id='dropdown0' class='dropdown-content'>
+            <li><a href="{% url 'about' %}">About</a></li>
+          </ul>
           <!-- Console Dropdown -->
-          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Console</a>
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Consoles</a>
           <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="{% url 'console' %}">Console</a></li>
+            <li><a href="{% url 'console' %}">Consoles</a></li>
             <li class="divider" tabindex="-1"></li>
             <li><a href="{% url 'console' %}">Add Console</a></li>
             <li class="divider" tabindex="-1"></li>
@@ -64,11 +73,11 @@
           </ul>
         </div>
         <!-- Heading Right -->
-        <ul class="brand-logo center right">
+        <ul class="brand-logo right">
           <!-- if user.is_authenticated  -->
           <!-- else -->
-          <li><a>Sign Up</a></li>
-          <li><a>Log In</a></li>
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          <li><a href="{% url 'login' %}">Log In</a></li>
           <!-- endif -->
         </ul>
       </div>
@@ -84,7 +93,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.dropdown-trigger');
-      var instances = M.Dropdown.init(elems, { alignment: 'center', constrainWidth: false });
+      var instances = M.Dropdown.init(elems, { alignment: 'center', constrainWidth: false, hover: true });
     });
   </script>
   <footer class="page-footer">
