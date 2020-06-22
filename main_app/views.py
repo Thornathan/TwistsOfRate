@@ -5,6 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Console, Game, Blog
 import uuid
 import boto3
 # Create your views here.
@@ -29,3 +30,5 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
 
+def consoles_index(request):
+  return render(request, 'consoles/', { 'consoles': consoles })

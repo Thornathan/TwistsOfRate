@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="valign-center">
+    <h1>Consoles</h1>
+    <br>
+    <p>This is the sorting link bar</p>
+    <br>
+    {% for console in consoles %}
+        <a href="{ url 'detail' console.id }">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">{{ console.name }}</span>
+                <p>Manufacturer: {{ console.manufacturer }}</p>
+                <p>Release Date: {{ console.release }}</p>
+            </div>
+        </div>
+        </a>
+    {% endfor %}
+</div>
+
+{% endblock %}
