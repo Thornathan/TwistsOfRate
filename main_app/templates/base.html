@@ -2,31 +2,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cat Collector</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Twist Of Rate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
   <header class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
+        <!-- Heading Left -->
         <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Twists Of Rate</a></li>
+          <li><a href="/" class="left brand-logo" id="headerText"
+              style="font-family: 'Pacifico', cursive; color: #6FFFE9;">&nbsp;&nbsp;<img src="{% static 'images/Logo.png' %}" alt="Logo"
+                style="width: 3rem;">&nbsp;Twists Of Rate</a></li>
         </ul>
-        <ul class = "right">
-          <li><a href="{% url 'about' %}">About</a></li>
+        <!-- Heading Center -->
+        <div class="brand-logo center">
+          <!-- Console Dropdown -->
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Console</a>
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="{% url 'console' %}">Console</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="{% url 'console' %}">Add Console</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="{% url 'console' %}">Add Rating</a></li>
+          </ul>
+          <!-- Genre Dropdown -->
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Genre</a>
+          <ul id='dropdown2' class='dropdown-content'>
+            <li><a href="{% url 'genre' %}">Genre</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="{% url 'genre' %}">Add Genre</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="{% url 'genre' %}">Add Rating</a></li>
+          </ul>
+          <!-- Title Dropdown -->
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>Title</a>
+          <ul id='dropdown3' class='dropdown-content'>
+            <li><a href="{% url 'title' %}">Title</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="{% url 'title' %}">Add Title</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="{% url 'title' %}">Add Rating</a></li>
+          </ul>
+          <!-- Blog Dropdown -->
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown4'>Blog</a>
+          <ul id='dropdown4' class='dropdown-content'>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="{% url 'blog' %}">Add Blog</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="{% url 'blog' %}">Add Rating</a></li>
+          </ul>
+        </div>
+        <!-- Heading Right -->
+        <ul class="brand-logo center right">
+          <!-- if user.is_authenticated  -->
+          <!-- else -->
+          <li><a>Sign Up</a></li>
+          <li><a>Log In</a></li>
+          <!-- endif -->
         </ul>
       </div>
     </nav>
   </header>
   <main class="container">
-  {% block content %}
-  {% endblock %}
+    {% block content %}
+    {% endblock %}
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.dropdown-trigger');
+      var instances = M.Dropdown.init(elems, { alignment: 'center', constrainWidth: false });
+    });
+  </script>
   <footer class="page-footer">
     <div class="right">All Rights Reserved, &copy; 2020 Twists Of Rate &nbsp;</div>
   </footer>
