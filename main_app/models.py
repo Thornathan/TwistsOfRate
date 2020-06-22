@@ -8,6 +8,7 @@ class Game(models.Model):
     name = models.CharField(max_length=100)
     genre = models.CharField(max_length=100)
     release = models.DateField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -34,6 +35,7 @@ class Blog(models.Model):
     body = models.TextField()
     console = models.ForeignKey(Console, on_delete=models.CASCADE)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
