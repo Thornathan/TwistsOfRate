@@ -20,3 +20,8 @@ footer.page-footer {
   padding-top: 0;
   text-align: right;
 }
+
+nav ul a {
+  font-family: 'Oswald', sans-serif;
+}
+
