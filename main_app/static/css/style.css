@@ -52,6 +52,7 @@ nav {
   left: 0px;
   top: 0px;
   z-index: -1;
+  padding-bottom: 10px; /* might remove */
 }
 
 #backgroundB {
@@ -60,4 +61,5 @@ nav {
   left: 0px;
   top: 0px;
   z-index: -1;
+  padding-bottom: 10px; /* might remove */
 }
