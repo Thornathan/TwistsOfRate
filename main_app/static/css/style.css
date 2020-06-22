@@ -1,7 +1,15 @@
+html {
+  height: 100%;
+  background-color: #ffffff;
+}
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  height: 100%;
+  background-color: #ffffff;
+  background: url(/main_app/static/images/background2_2.svg);
 }
 
 main {
@@ -11,4 +19,21 @@ main {
 footer.page-footer {
   padding-top: 0;
   text-align: right;
+}
+
+nav ul li a {
+  font-family: 'Oswald', sans-serif;
+  color: #6FFFE9;
+}
+
+a.dropdown-trigger.btn{
+  background-color: transparent ;
+  box-shadow: transparent;
+  -webkit-box-shadow: none;
+  color: #6FFFE9;
+}
+
+.dropdown-content li>a {
+  color: #6FFFE9;;
+  background: linear-gradient(90deg, rgba(58,80,107,1) 35%, rgba(28,37,65,1) 100%);
 }
