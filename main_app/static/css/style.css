@@ -8,7 +8,7 @@ body {
   flex-direction: column;
   height: 100%;
   background-color: #ffffff;
-  background: url(/main_app/static/images/background2.svg);
+  background: url(/main_app/static/images/background2_2.svg);
 }
 main {
   flex: 1 0 auto;
@@ -27,7 +27,8 @@ a.dropdown-trigger.btn{
   -webkit-box-shadow: none;
   color: #6FFFE9;
 }
+
 .dropdown-content li>a {
-  color: #6FFFE9;;
+  color: #6FFFE9;
   background: linear-gradient(90deg, rgba(58,80,107,1) 35%, rgba(28,37,65,1) 100%);
 }

@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
   <header class="navbar-fixed">
     <nav>
@@ -72,10 +74,13 @@
       </div>
     </nav>
   </header>
+
   <main class="container">
     {% block content %}
     {% endblock %}
   </main>
+
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.dropdown-trigger');
@@ -86,4 +91,5 @@
     <div class="right">All Rights Reserved, &copy; 2020 Twists Of Rate &nbsp;</div>
   </footer>
 </body>
+
 </html>
