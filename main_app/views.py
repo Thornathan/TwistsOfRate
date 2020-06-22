@@ -31,4 +31,5 @@ def signup(request):
   return render(request, 'registration/signup.html', context)
 
 def consoles_index(request):
-  return render(request, 'consoles/', { 'consoles': consoles })
+  return render(request, 'consoles/index.html')
+
