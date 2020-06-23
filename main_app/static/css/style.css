@@ -24,6 +24,7 @@ body {
 main {
   flex: 1 0 auto;
   font-family: 'Oswald', sans-serif;
+  padding-top: 4px;
 }
 
 
@@ -101,6 +102,28 @@ footer.page-footer {
   justify-content: space-evenly;
 }
 
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-weight: 900;
+}
+
+h5 {
+  font-family: 'Roboto';
+  font-weight: 600;
+  text-align: center;
+}
+
+.card-content ul li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+#homeImg {
+  width: 700px;
+  height: 740px; 
+  object-fit: cover;
+}
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px)  {
   body {
