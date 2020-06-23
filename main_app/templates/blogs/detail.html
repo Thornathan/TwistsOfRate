@@ -26,6 +26,17 @@
         </div>
     </div>
 </div>
+{% for comment in comments %}
+    <div class="row">
+        <div class="card">
+            <div class="card-content">
+                <p>{{ comment.body }}</p>
+                <p>By: {{ comment.author }} on {{ comment.date }}</p>
+            </div>
+        </div>
+    </div>
+{% empty %}
 
+{% endfor %}
 
 {% endblock %}
