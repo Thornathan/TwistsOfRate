@@ -40,9 +40,14 @@ ul li a {
 
 /* Logo */
 a.left.brand-logo {
+  font-family: 'Pacifico', cursive;
   font-size: 1.75rem;
   font-family: 'Pacifico', cursive; 
   color: #555555;
+}
+
+nav div ul li a img {
+  width: 3rem;
 }
 
 /* dropdown nav */
@@ -63,8 +68,6 @@ a.dropdown-trigger.btn{
 }
 
 nav {
-  /* background: linear-gradient(-90deg, rgba(88,207,235,0.50) 50%, rgba(215,247,255,0.50) 100%); */
-  /* background: linear-gradient(90deg, rgba(111,255,166,.50) 35%, rgba(111,255,144,.50) 100%); */
   background: linear-gradient(90deg, rgba(255,111,111,.25) 35%, rgba(255,163,111,.25) 100%);
   background-color: transparent; 
   /* box-shadow: none;
@@ -82,6 +85,22 @@ footer.page-footer {
   padding-top: 0;
   text-align: right;
 }
+
+/* Hamburger */
+#hamburger {
+  visibility: hidden;
+  position: absolute;
+  right: 10px;
+}
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, rgba(115,206,201,1) 35%, rgba(11,186,183,1) 100%);
+  align-content: center;
+  justify-content: space-evenly;
+}
+
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px)  {
   body {
@@ -104,16 +123,17 @@ footer.page-footer {
   }
 
   /* dropdown nav */
-a.dropdown-trigger.btn{
-  font-size: 18px;
-}
+  a.dropdown-trigger.btn{
+    font-size: 18px;
+    visibility: visible;
+  }
 
-/* Logo */
-a.left.brand-logo {
-  font-size: 2rem;
-  font-family: 'Pacifico', cursive; 
-  color: #555555;
-}
+  /* Logo */
+  a.left.brand-logo {
+    font-size: 2rem;
+    font-family: 'Pacifico', cursive; 
+    color: #555555;
+  }
 
 }
 
@@ -140,6 +160,7 @@ a.left.brand-logo {
   /* dropdown nav */
   a.dropdown-trigger.btn{
     font-size: 10px;
+    visibility: visible;
   }
 
   /* Logo */
@@ -152,7 +173,6 @@ a.left.brand-logo {
   nav div ul li a img {
     width: 2rem;
   }
-
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
@@ -169,26 +189,51 @@ a.left.brand-logo {
     background: linear-gradient(90deg, rgba(111,255,166,.10) 35%, rgba(111,255,144,.25) 100%);
     background-color: transparent; 
   }
-
-  /* Nav bar text */
-  nav ul li a {
-    font-size: 8px;
+  
+  a.dropdown-trigger.btn {
+    visibility: visible;
+  }
+  
+  a.dropdown-trigger.btn:hover {
+    visibility: visible;
   }
 
   /* dropdown nav */
-  a.dropdown-trigger.btn{
-    font-size: 8px;
+  #hideMe {
+    visibility: hidden;
   }
-
+  
   /* Logo */
   a.left.brand-logo {
-    font-size: 8px;
+    visibility: visible;
+    font-size: 1.5rem;
     font-family: 'Pacifico', cursive; 
     color: #555555;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav ul li {
+    visibility: hidden;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: center;
   }
 
   nav div ul li a img {
-    width: 1rem;
+    width: 2.5rem;
+  }
+
+  #hamburger {
+    visibility: visible;
+  }
+  
+  #hamburgerDrop {
+    visibility: visible;
   }
 }
 
@@ -206,21 +251,17 @@ a.left.brand-logo {
     background: linear-gradient(90deg, rgba(111,255,166,.10) 35%, rgba(111,255,144,.25) 100%);
     background-color: transparent; 
   }
-
-  /* Nav bar text */
-  nav ul li a {
-    display: none;
-  }
-
+  
   /* dropdown nav */
-  a.dropdown-trigger.btn{
-    display: none;
+  #hideMe {
+    visibility: hidden;
   }
 
   /* Logo */
   a.left.brand-logo {
     font-size: 1.25rem;
     font-family: 'Pacifico', cursive; 
+    visibility: visible;
     color: #555555;
     height: 100%;
     position: relative;
@@ -236,5 +277,13 @@ a.left.brand-logo {
 
   nav div ul li a img {
     width: 2rem;
+  }
+
+  #hamburger {
+    visibility: visible;
+  }
+  
+  #hamburgerDrop {
+    visibility: visible;
   }
 }
