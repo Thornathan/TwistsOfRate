@@ -1,14 +1,13 @@
 html {
   height: 100%;
-  /* background-color: black; */
-  background: linear-gradient(180deg, rgba(111,255,233,0) 35%, rgba(91,192,190,1) 100%);
+  background: linear-gradient(180deg, rgba(120,209,205,1) 46%, rgba(111,255,233,1) 100%);
 }
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   height: 100%;
-  background: url(/static/images/background2.svg), url(/static/images/background1.svg); 
+  background: url(/static/images/background.svg); 
   background-size: cover; 
 }
 
@@ -47,16 +46,6 @@ nav {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
-
-
-/* #backgroundC {
-  position: absolute;
-  top: 962px;
-  z-index: -10;
-  background-repeat: repeat;
-  border-image-repeat: repeat;
-  background-size: cover;
-} */
 
 .page-footer {
   color: #6FFFE9;
