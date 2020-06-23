@@ -7,7 +7,7 @@ urlpatterns = [
     path('consoles/', views.consoles_index, name='consoles_index'),
     path('consoles/<int:console_id>/', views.console_detail, name='console_detail'),
     path('genre/', views.about, name='genre'),
-    path('title/', views.about, name='title'),
+    path('game/', views.about, name='game'),
     path('blog/', views.about, name='blog'),
     path('accounts/signup/', views.signup, name='signup'),
 ]
