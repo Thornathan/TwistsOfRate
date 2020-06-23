@@ -31,5 +31,10 @@ def signup(request):
   return render(request, 'registration/signup.html', context)
 
 def consoles_index(request):
-  return render(request, 'consoles/index.html')
+  consoles = Console.objects.all()
+  return render(request, 'consoles/index.html', { 'consoles': consoles })
+
+def console_detail(request, console_id):
+  console = Console.objects.get(id=console_id)
+  return render(request, 'consoles/detail.html', { 'console': console })
 
