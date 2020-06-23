@@ -107,6 +107,10 @@ h1 {
   font-weight: 900;
 }
 
+h2 {
+  font-family: 'Pacifico', cursive;
+}
+
 h5 {
   font-family: 'Roboto';
   font-weight: 600;
@@ -123,6 +127,11 @@ h5 {
   width: 700px;
   height: 740px; 
   object-fit: cover;
+}
+
+strong {
+  font-weight: 900;
+  color: orange;
 }
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px)  {
