@@ -9,6 +9,7 @@
   <title>Twist Of Rate</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
@@ -24,18 +25,17 @@
       <div class="nav-wrapper">
         <!-- Heading Left -->
         <ul>
-          <li><a href="/" class="left brand-logo"
-              style="font-family: 'Pacifico', cursive; color: #555555;">&nbsp;&nbsp;<img
-                src="{% static 'images/Logo.png' %}" alt="Logo" style="width: 3rem;">&nbsp;Twists Of Rate</a></li>
+          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;<img src="{% static 'images/Logo.png' %}"
+                alt="Logo">&nbsp;Twists Of Rate</a></li>
         </ul>
         <!-- Heading Center -->
         <div class="brand-logo center">
-          <a class='dropdown-trigger btn' href='#' data-target='dropdown0'>About</a>
+          <a class='dropdown-trigger btn' id="hideMe" href='#' data-target='dropdown0'>About</a>
           <ul id='dropdown0' class='dropdown-content'>
             <li><a href="{% url 'about' %}">About</a></li>
           </ul>
           <!-- Console Dropdown -->
-          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Consoles</a>
+          <a class='dropdown-trigger btn' id="hideMe" href='#' data-target='dropdown1'>Consoles</a>
           <ul id='dropdown1' class='dropdown-content'>
             <li><a href="{% url 'consoles_index' %}">Consoles</a></li>
             <li class="divider" tabindex="-1"></li>
@@ -44,7 +44,7 @@
             <li><a href="{% url 'consoles_index' %}">Add Rating</a></li>
           </ul>
           <!-- Genre Dropdown -->
-          <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Genre</a>
+          <a class='dropdown-trigger btn' id="hideMe" href='#' data-target='dropdown2'>Genre</a>
           <ul id='dropdown2' class='dropdown-content'>
             <li><a href="{% url 'genres_index' %}">Genre</a></li>
             <li class="divider" tabindex="-1"></li>
@@ -53,7 +53,7 @@
             <li><a href="{% url 'genres_index' %}">Add Rating</a></li>
           </ul>
           <!-- Title Dropdown -->
-          <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>Games</a>
+          <a class='dropdown-trigger btn' id="hideMe" href='#' data-target='dropdown3'>Games</a>
           <ul id='dropdown3' class='dropdown-content'>
             <li><a href="{% url 'games_index' %}">Games</a></li>
             <li class="divider" tabindex="-1"></li>
@@ -62,7 +62,7 @@
             <li><a href="{% url 'games_index' %}">Add Game Rating</a></li>
           </ul>
           <!-- Blog Dropdown -->
-          <a class='dropdown-trigger btn' href='#' data-target='dropdown4'>Blog</a>
+          <a class='dropdown-trigger btn' id="hideMe" href='#' data-target='dropdown4'>Blog</a>
           <ul id='dropdown4' class='dropdown-content'>
             <li><a href="{% url 'blog' %}">Blog</a></li>
             <li class="divider" tabindex="-1"></li>
@@ -72,16 +72,55 @@
           </ul>
         </div>
         <!-- Heading Right -->
-        <ul class="brand-logo right">
+        <ul class="brand-logo right" id="hideMe">
           <!-- if user.is_authenticated  -->
           <!-- else -->
           <li><a href="{% url 'signup' %}">Sign Up</a></li>
           <li><a href="{% url 'login' %}">Log In</a></li>
           <!-- endif -->
         </ul>
-      </div>
+        <!-- creates hamburger -->
+        <div class="nav-wrapper" id="hamburger">
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="right material-icons">menu</i></a>
+        </div>
     </nav>
   </header>
+  <!-- Sidenav -->
+  <div class="sidenav" id="mobile-demo">
+    <a class='dropdown-trigger btn' id="hamburgerDrop" href='#' data-target='dropdown5'>About</a>
+    <ul id='dropdown5' class='dropdown-content'>
+      <li><a href="{% url 'about' %}">About</a></li>
+    </ul>
+    <a class='dropdown-trigger btn' id="hamburgerDrop" href='#' data-target='dropdown6'>Console</a>
+    <ul id='dropdown6' class='dropdown-content'>
+      <li><a href="{% url 'consoles_index' %}">Consoles</a></li>
+      <li><a href="{% url 'consoles_index' %}">Add Console</a></li>
+      <li><a href="{% url 'consoles_index' %}">Add Rating</a></li>
+    </ul>
+    <a class='dropdown-trigger btn' id="hamburgerDrop" href='#' data-target='dropdown7'>Genre</a>
+    <ul id='dropdown7' class='dropdown-content'>
+      <li><a href="{% url 'genres_index' %}">Genre</a></li>
+      <li><a href="{% url 'genres_index' %}">Add Genre</a></li>
+      <li><a href="{% url 'genres_index' %}">Add Rating</a></li>
+    </ul>
+    <a class='dropdown-trigger btn' id="hamburgerDrop" href='#' data-target='dropdown8'>Games</a>
+    <ul id='dropdown8' class='dropdown-content'>
+      <li><a href="{% url 'games_index' %}">Games</a></li>
+      <li><a href="{% url 'games_index' %}">Add Game</a></li>
+      <li><a href="{% url 'games_index' %}">Add Game Rating</a></li>
+    </ul>
+    <a class='dropdown-trigger btn' id="hamburgerDrop" href='#' data-target='dropdown9'>Blog</a>
+    <ul id='dropdown9' class='dropdown-content'>
+      <li><a href="{% url 'blog' %}">Blog</a></li>
+      <li><a href="{% url 'blog' %}">Add Blog</a></li>
+      <li><a href="{% url 'blog' %}">Add Rating</a></li>
+    </ul>
+    <a class='dropdown-trigger btn' id="hamburgerDrop" href='#' data-target='dropdown10'>Sign-In/Sign-Up</a>
+    <ul id='dropdown10' class='dropdown-content'>
+      <li><a href="{% url 'signup' %}">Sign Up</a></li>
+      <li><a href="{% url 'login' %}">Log In</a></li>
+    </ul>
+  </div>
 
   <main class="container">
     {% block content %}
@@ -90,9 +129,16 @@
 
 
   <script>
+    // Dropdown
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.dropdown-trigger');
       var instances = M.Dropdown.init(elems, { alignment: 'center', constrainWidth: false, hover: true });
+    });
+
+    // Hamburger open sidebar
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
     });
   </script>
   <footer class="page-footer">
