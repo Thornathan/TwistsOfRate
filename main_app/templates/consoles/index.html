@@ -5,17 +5,21 @@
     <br>
     <p>This is the sorting link bar</p>
     <br>
-    {% for console in consoles %}
-        <a href="{ url 'detail' console.id }">
-        <div class="card">
-            <div class="card-content">
-                <span class="card-title">{{ console.name }}</span>
-                <p>Manufacturer: {{ console.manufacturer }}</p>
-                <p>Release Date: {{ console.release }}</p>
-            </div>
-        </div>
-        </a>
-    {% endfor %}
+    <div class="row">
+        {% for console in consoles %}
+            <a href="{% url 'console_detail' console.id %}">
+                <div class="col s4">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">{{ console.name }}</span>
+                            <p>Manufacturer: {{ console.manufacturer }}</p>
+                            <p>Release Date: {{ console.release }}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
 </div>
 
 {% endblock %}
