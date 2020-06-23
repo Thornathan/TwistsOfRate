@@ -44,7 +44,7 @@ ul li a {
 nav {
   background-color: transparent;
   box-shadow: none;
-  -webkit-box-shadow: none;
+  /* -webkit-box-shadow: none; */
 }
 
 .page-footer {
