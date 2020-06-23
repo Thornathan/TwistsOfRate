@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  background: linear-gradient(180deg, rgba(120,209,205,1) 46%, rgba(111,255,233,1) 100%);
+  background: linear-gradient(90deg, rgba(115,206,201,1) 35%, rgba(93,193,191,1) 100%);
   box-sizing: border-box;
   width: 100%;
   height: auto;
@@ -12,12 +12,12 @@ body {
   flex-direction: column;
   height: 100%;
   background: url(/static/images/background.svg); 
-  background-size: cover; 
+  background-size: contain; 
+  background-repeat: no-repeat;
   font-family: 'Oswald', sans-serif;
   box-sizing: border-box;
   width: 100%;
   height: auto;
-  max-width: 100%;
   min-width: 100%;
 }
 
@@ -36,6 +36,13 @@ nav ul li a {
 
 ul li a {
   padding: 0 6px;
+}
+
+/* Logo */
+a.left.brand-logo {
+  font-size: 1.75rem;
+  font-family: 'Pacifico', cursive; 
+  color: #555555;
 }
 
 /* dropdown nav */
@@ -58,10 +65,10 @@ a.dropdown-trigger.btn{
 nav {
   /* background: linear-gradient(-90deg, rgba(88,207,235,0.50) 50%, rgba(215,247,255,0.50) 100%); */
   /* background: linear-gradient(90deg, rgba(111,255,166,.50) 35%, rgba(111,255,144,.50) 100%); */
-  background: linear-gradient(90deg, rgba(255,111,111,.50) 35%, rgba(255,163,111,.25) 100%);
-  /* background-color: transparent; */
-  /* box-shadow: none; */
-  /* -webkit-box-shadow: none; */
+  background: linear-gradient(90deg, rgba(255,111,111,.25) 35%, rgba(255,163,111,.25) 100%);
+  background-color: transparent; 
+  /* box-shadow: none;
+  -webkit-box-shadow: none; */
 }
 
 /* footer */
@@ -74,4 +81,160 @@ nav {
 footer.page-footer {
   padding-top: 0;
   text-align: right;
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px)  {
+  body {
+    background: url(/static/images/background2.svg); 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  nav {
+    background: linear-gradient(-90deg, rgba(88,207,235,0.50) 50%, rgba(215,247,255,0.25) 100%);
+    background-color: transparent; 
+  }
+
+  /* Nav bar text */
+  nav ul li a {
+    font-size: 18px;
+  }
+
+  /* dropdown nav */
+a.dropdown-trigger.btn{
+  font-size: 18px;
+}
+
+/* Logo */
+a.left.brand-logo {
+  font-size: 2rem;
+  font-family: 'Pacifico', cursive; 
+  color: #555555;
+}
+
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  body {
+    background: url(/static/images/background4.svg); 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  nav {
+    background: linear-gradient(90deg, rgba(111,255,166,.10) 35%, rgba(111,255,144,.25) 100%);
+    background-color: transparent; 
+  }
+
+  /* Nav bar text */
+  nav ul li a {
+    font-size: 10px;
+  }
+
+  /* dropdown nav */
+  a.dropdown-trigger.btn{
+    font-size: 10px;
+  }
+
+  /* Logo */
+  a.left.brand-logo {
+    font-size: 1.5rem;
+    font-family: 'Pacifico', cursive; 
+    color: #555555;
+  }
+
+  nav div ul li a img {
+    width: 2rem;
+  }
+
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  body {
+    background: url(/static/images/background4.svg); 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  nav {
+    background: linear-gradient(90deg, rgba(111,255,166,.10) 35%, rgba(111,255,144,.25) 100%);
+    background-color: transparent; 
+  }
+
+  /* Nav bar text */
+  nav ul li a {
+    font-size: 8px;
+  }
+
+  /* dropdown nav */
+  a.dropdown-trigger.btn{
+    font-size: 8px;
+  }
+
+  /* Logo */
+  a.left.brand-logo {
+    font-size: 8px;
+    font-family: 'Pacifico', cursive; 
+    color: #555555;
+  }
+
+  nav div ul li a img {
+    width: 1rem;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  body {
+    background: url(/static/images/background4.svg); 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  nav {
+    background: linear-gradient(90deg, rgba(111,255,166,.10) 35%, rgba(111,255,144,.25) 100%);
+    background-color: transparent; 
+  }
+
+  /* Nav bar text */
+  nav ul li a {
+    display: none;
+  }
+
+  /* dropdown nav */
+  a.dropdown-trigger.btn{
+    display: none;
+  }
+
+  /* Logo */
+  a.left.brand-logo {
+    font-size: 1.25rem;
+    font-family: 'Pacifico', cursive; 
+    color: #555555;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav div ul li a img {
+    width: 2rem;
+  }
 }
