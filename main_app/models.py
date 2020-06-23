@@ -30,8 +30,7 @@ class Console(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
-    #author = the user who wrote it
-    #date = the date that it was posted
+    date = models.DateField().auto_now
     body = models.TextField()
     console = models.ForeignKey(Console, on_delete=models.CASCADE)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
@@ -42,6 +41,8 @@ class Blog(models.Model):
         
 class Comments(models.Model):
     body = models.TextField()
-    #author = the user who wrote it
-    #date = the date that it was posted
+    date = models.DateField().auto_now
     #rating = figure this out too
+    console = models.ForeignKey(Console, on_delete=models.CASCADE)
+    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
