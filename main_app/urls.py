@@ -10,6 +10,7 @@ urlpatterns = [
     path('genres/<str:genre>/', views.genres_index, name='genres_index'),
     path('games/', views.games_index, name='games_index'),
     path('games/<int:game_id>/', views.game_detail, name='game_detail'),
-    path('blog/', views.about, name='blog'),
+    path('blogs/', views.blogs_index, name='blogs_index'),
+    path('blogs/<int:blog_id>/',  views.blog_detail, name='blog_detail'),
     path('accounts/signup/', views.signup, name='signup'),
 ]
