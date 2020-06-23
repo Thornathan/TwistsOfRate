@@ -102,3 +102,12 @@ def genres_detail(request):
   response = requests.request("GET", url, headers=headers)
   genre = Game.objects.filter(genre=genre)
   return render(request, 'genres/detail.html', {'response': response, 'genre': genre})
+
+def blogs_index(request):
+  blogs = Blog.objects.all()
+  return render(request, 'blogs/index.html', { 'blogs': blogs })
+
+def blog_detail(request, blog_id):
+  blog = Blog.objects.get(id=blog_id)
+  return render(request, 'blogs/detail.html', { 'blog': blog })
+
