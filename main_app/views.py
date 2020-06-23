@@ -38,3 +38,11 @@ def console_detail(request, console_id):
   console = Console.objects.get(id=console_id)
   return render(request, 'consoles/detail.html', { 'console': console })
 
+def games_index(request):
+  games = Game.objects.all()
+  return render(request, 'games/index.html', { 'games': games })
+
+def game_detail(request, game_id):
+  game = Game.objects.get(id=game_id)
+  return render(request, 'games/detail.html', { 'game': game })
+
