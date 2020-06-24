@@ -69,7 +69,7 @@ def games_index(request):
   return render(request, 'games/index.html', {'games': games})
 
 def game_detail(request, game_id):
-  url = "https://rawg-video-games-database.p.rapidapi.com/games/%7Bgame_pk%7D"
+  url = f"https://rawg-video-games-database.p.rapidapi.com/games/{game_id}"
 
   headers = {
       'x-rapidapi-host': "rawg-video-games-database.p.rapidapi.com",
