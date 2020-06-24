@@ -39,8 +39,6 @@
           <ul id='dropdown1' class='dropdown-content'>
             <li><a href="{% url 'consoles_index' %}">Consoles</a></li>
             <li class="divider" tabindex="-1"></li>
-            <li><a href="{% url 'consoles_index' %}">Add Console</a></li>
-            <li class="divider" tabindex="-1"></li>
             <li><a href="{% url 'consoles_index' %}">Add Rating</a></li>
           </ul>
           <!-- Genre Dropdown -->
@@ -48,16 +46,12 @@
           <ul id='dropdown2' class='dropdown-content'>
             <li><a href="{% url 'genres_index' %}">Genre</a></li>
             <li class="divider" tabindex="-1"></li>
-            <li><a href="{% url 'genres_index' %}">Add Genre</a></li>
-            <li class="divider" tabindex="-1"></li>
             <li><a href="{% url 'genres_index' %}">Add Genre Rating</a></li>
           </ul>
           <!-- Title Dropdown -->
           <a class='dropdown-trigger btn' id="hideMe" href='#' data-target='dropdown3'>Games</a>
           <ul id='dropdown3' class='dropdown-content'>
             <li><a href="{% url 'games_index' %}">Games</a></li>
-            <li class="divider" tabindex="-1"></li>
-            <li><a href="{% url 'games_index' %}">Add Game</a></li>
             <li class="divider" tabindex="-1"></li>
             <li><a href="{% url 'games_index' %}">Add Game Rating</a></li>
           </ul>
