@@ -9,6 +9,7 @@ from .models import Console, Game, Blog
 import uuid
 import boto3
 import requests
+
 # Create your views here.
 
 def home(request):
@@ -92,7 +93,8 @@ def genres_index(request):
   return render(request, 'genres/index.html', {'genres': genres})
 
 def genres_detail(request, genre_id):
-  url = "https://rawg-video-games-database.p.rapidapi.com/genres/%7Bid%7D"
+
+  url = f"https://rawg-video-games-database.p.rapidapi.com/genres/{genre_id}"
 
   headers = {
       'x-rapidapi-host': "rawg-video-games-database.p.rapidapi.com",
