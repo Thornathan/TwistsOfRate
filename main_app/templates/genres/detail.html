@@ -6,7 +6,7 @@
                 <div class="card-content">
                 <img src={{ genre.image_background }} width="100%">
                     <span class="card-title">{{ genre.name }}</span>
-                 {{ genre.description }}
+                 {{ genre.description|safe }}
                 </div>
             </div>
         </div>
