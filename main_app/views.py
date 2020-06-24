@@ -56,7 +56,7 @@ def console_detail(request, console_id):
   return render(request, 'consoles/detail.html', {'response': response, 'console': console })
 
 def games_index(request):
-  url = "https://rawg-video-games-database.p.rapidapi.com/games"
+  url = "https://rawg-video-games-database.p.rapidapi.com/games?page_size=200"
 
   headers = {
       'x-rapidapi-host': "rawg-video-games-database.p.rapidapi.com",
@@ -65,7 +65,6 @@ def games_index(request):
 
   response = requests.request("GET", url, headers=headers)
   games = response.json()['results']
-    
   return render(request, 'games/index.html', {'games': games})
 
 def game_detail(request, game_id):
@@ -77,11 +76,11 @@ def game_detail(request, game_id):
       }
 
   response = requests.request("GET", url, headers=headers)
-  game = Game.objects.get(id=game_id)
-  return render(request, 'games/detail.html', {'response': response, 'game': game })
+  game = response.json()
+  return render(request, 'games/detail.html', {'game': game })
 
 def genres_index(request):
-  url = "https://rawg-video-games-database.p.rapidapi.com/genres"
+  url = "https://rawg-video-games-database.p.rapidapi.com/genres?ordering=name"
 
   headers = {
       'x-rapidapi-host': "rawg-video-games-database.p.rapidapi.com",
@@ -89,20 +88,19 @@ def genres_index(request):
       }
 
   response = requests.request("GET", url, headers=headers)
-  genre = Game.objects.get(genre=genre)
-  return render(request, 'genres/index.html', {'response': response, 'genre': genre})
+  genres = response.json()['results']
+  return render(request, 'genres/index.html', {'genres': genres})
 
-def genres_detail(request):
+def genres_detail(request, genre_id):
   url = "https://rawg-video-games-database.p.rapidapi.com/genres/%7Bid%7D"
 
   headers = {
       'x-rapidapi-host': "rawg-video-games-database.p.rapidapi.com",
       'x-rapidapi-key': "e623d7c465mshd3263eeaaa7033dp1631f8jsn581376b2f094"
       }
-
   response = requests.request("GET", url, headers=headers)
-  genre = Game.objects.filter(genre=genre)
-  return render(request, 'genres/detail.html', {'response': response, 'genre': genre})
+  genre = response.json()
+  return render(request, 'genres/detail.html', {'genre': genre})
 
 def blogs_index(request):
   blogs = Blog.objects.all()

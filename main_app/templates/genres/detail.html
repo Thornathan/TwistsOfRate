@@ -1,39 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Genre Details</h1>
-
 <div class="row">
-    <div class="col s6">
-        <h3>{{ genre.name }}</h3>
-        <div class="card">
-            <div class="card-content">
-                <ul>
-                    <li>This is where an image of the console will go</li>
-                </ul>
+    {% for g in genre %}
+        <div class="col s4">
+            <div class="card">
+                <div class="card-content">
+                <img src={{ g.image_background }} width="100%">
+                    <span class="card-title">{{ g.name }}</span>
+                 {{ g.description }}
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col s6">
-        <div class="card">
-            <div class="card-content">
-                <ul>
-                    <li>{{ console.manufacturer }}</li>
-                    <li>{{ console.release }}</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
 </div>
-<br>
-
-<h2>Games</h2>
-<br>
-<p>This is the sorting link bar</p>
-<br>
-{% for game in games %}
-
-
-{% endfor %}
 
 {% endblock %}
