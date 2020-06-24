@@ -105,10 +105,7 @@ def genres_detail(request, genre_id):
   return render(request, 'genres/detail.html', {'genre': genre})
 
 def blogs_index(request, console_id):
-  if(console_id):
-    blogs = Blog.objects.filter(console = console_id)
-  else:
-    blogs = Blog.objects.all()
+  blogs = Blog.objects.all()
   return render(request, 'blogs/index.html', { 'blogs': blogs })
 
 def blog_detail(request, blog_id):
