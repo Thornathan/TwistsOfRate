@@ -112,3 +112,4 @@ def blog_detail(request, blog_id):
   blog = Blog.objects.get(id=blog_id)
   return render(request, 'blogs/detail.html', { 'blog': blog })
 
+
