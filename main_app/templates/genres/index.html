@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    {% for genre in genres %}
+    <div>
+        <a href="{% url 'genres_detail' genre.id %}">
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-content">
+                    <img src={{ genre.image_background }} width="100%">
+                        <span class="card-title">{{ genre.name }}</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
