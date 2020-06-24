@@ -62,11 +62,6 @@ a.dropdown-trigger.btn{
   /* border-top: double 10px; */
 }
 
-/* dropdown nav */
-.dropdown-content li>a {
-  color: #6FFFE9;
-  background: linear-gradient(90deg, rgba(58,80,107,1) 35%, rgba(28,37,65,1) 100%);
-}
 
 nav {
   background: linear-gradient(90deg, rgba(255,111,111,.25) 35%, rgba(255,163,111,.25) 100%);
@@ -99,31 +94,91 @@ footer.page-footer {
   flex-direction: column;
   background: linear-gradient(135deg, rgba(115,206,201,1) 35%, rgba(11,186,183,1) 100%);
   align-content: center;
-  justify-content: space-evenly;
+  justify-content: start;
 }
 
+/* body content */
 h1 {
   font-family: 'Pacifico', cursive;
   font-weight: 900;
+  text-align: center;
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  font-size: 2.5rem;
+  text-decoration: underline;
 }
 
 h5 {
   font-family: 'Roboto';
   font-weight: 600;
   text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Card content */
+
+.card {
+  /* height: 35vh auto; */
 }
 
 .card-content ul li {
+  top: 0px;
   font-family: 'Oswald', sans-serif;
   font-size: 12px;
   font-weight: 100;
 }
 
+.card .card-content img {
+  width: 100%;
+  height: auto;
+}
+
+/* Card Imgs */
+#cardImgs {
+  object-fit: cover;
+  object-position: center top;
+  width: 100%;
+  height: 20vh;
+}
+
+/* Card border */
+.card .card-content {
+  padding: 10px;
+}
+
+/* about page card */
+#uniqueCard {
+  padding: 1px 5px 20px;
+}
+
+/* Card content like text */
+#cardTitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555555;
+}
+
+.card .card-content p {
+  font-size: 1rem;
+  color: #555555;
+}
+
+/* Img on home screen */
 #homeImg {
-  width: 700px;
-  height: 740px; 
+  width: 100%;
+  height: auto; 
   object-fit: cover;
 }
+
+strong {
+  font-weight: 900;
+  color: orange;
+}
+
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px)  {
   body {
@@ -261,6 +316,11 @@ h5 {
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  html{
+    width: 100%;
+    height: auto;
+  }
+
   body {
     background: url(/static/images/background4.svg); 
     background-repeat: no-repeat;
@@ -271,7 +331,7 @@ h5 {
   }
 
   nav {
-    background: linear-gradient(90deg, rgba(111,255,166,.10) 35%, rgba(111,255,144,.25) 100%);
+    background: linear-gradient(90deg, rgba(111,255,166,.50) 35%, rgba(111,255,144,.25) 100%);
     background-color: transparent; 
   }
   
@@ -302,6 +362,12 @@ h5 {
     width: 2rem;
   }
 
+  #homeImg {
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+  }
+
   #hamburger {
     visibility: visible;
   }
@@ -309,4 +375,23 @@ h5 {
   #hamburgerDrop {
     visibility: visible;
   }
+
+  #hideMe {
+    visibility: hidden;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+  
+  .card-content ul li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 100;
+  }
+
+  .page-footer {
+    font-size: 10px;
+  }
+
 }
