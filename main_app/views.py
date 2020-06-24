@@ -65,6 +65,7 @@ def games_index(request):
 
   response = requests.request("GET", url, headers=headers)
   games = response.json()['results']
+    
   return render(request, 'games/index.html', {'games': games})
 
 def game_detail(request, game_id):

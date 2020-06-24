@@ -3,19 +3,26 @@
 
 <div class="row">
     {% for game in games %}
-    {% ifchanged game.name.0 %}
-        <div class="row"><h3>{{ game.name.0 }}</h3></div>
-    {% endifchanged %}
     <div>
         <a href="{% url 'game_detail' game.id %}">
+        {% comment %} <div>
+            {% ifchanged game.name.0 %}
+                <div class="row"><h3>{{ game.name.0 }}</h3></div>
+            {% endifchanged %}
+            </div> {% endcomment %}
             <div class="col s4">
                 <div class="card">
-                <img src=''
                     <div class="card-content">
+                    <img src={{ game.background_image }} width="100%">
                         <span class="card-title">{{ game.name }}</span>
-                        <p>Genre: {{ game.genre.0 }}</p>
+                        <p>Genre:
+                        {% for genres in game.genres %}
+                        {{ genres.name }}
+                        {% endfor %}
+                        </p>
                         <p>Release Date: {{ game.released }}</p>
                         <p>Rating: {{game.rating}}</p>
+                        <p>Metacritic: {{game.metacritic}}
                     </div>
                 </div>
             </div>
