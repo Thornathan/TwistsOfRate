@@ -104,7 +104,7 @@ def genres_detail(request, genre_id):
   genre = response.json()
   return render(request, 'genres/detail.html', {'genre': genre})
 
-def blogs_index(request):
+def blogs_index(request, console_id):
   blogs = Blog.objects.all()
   return render(request, 'blogs/index.html', { 'blogs': blogs })
 
