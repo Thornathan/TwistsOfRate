@@ -10,6 +10,8 @@ psycopg2-binary = "*"
 django = "*"
 boto3 = "*"
 requests = "*"
+django-heroku = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
