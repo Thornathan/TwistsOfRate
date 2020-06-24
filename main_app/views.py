@@ -64,8 +64,8 @@ def games_index(request):
       }
 
   response = requests.request("GET", url, headers=headers)
-  games = Game.objects.all()
-  return render(request, 'games/index.html', {'response': response, 'games': games })
+  games = response.json()['results']
+  return render(request, 'games/index.html', {'games': games})
 
 def game_detail(request, game_id):
   url = "https://rawg-video-games-database.p.rapidapi.com/games/%7Bgame_pk%7D"

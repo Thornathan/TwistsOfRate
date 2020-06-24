@@ -1,26 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="valign-center">
-    <h1>Games</h1>
-    <br>
-    <p>This is the sorting link bar</p>
-    <br>
-    <div class="row">
-        {% for game in games %}
-            <a href="{% url 'game_detail' game.id %}">
-                <div class="col s4">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title">{{ game.name }}</span>
-                            <p>Genre: {{ game.genre }}</p>
-                            <p>Release Date: {{ game.release }}</p>
-                        </div>
+<div class="row">
+    {% for game in games %}
+    {% ifchanged game.name.0 %}
+        <div class="row"><h3>{{ game.name.0 }}</h3></div>
+    {% endifchanged %}
+    <div>
+        <a href="{% url 'game_detail' game.id %}">
+            <div class="col s4">
+                <div class="card">
+                <img src=''
+                    <div class="card-content">
+                        <span class="card-title">{{ game.name }}</span>
+                        <p>Genre: {{ game.genre.0 }}</p>
+                        <p>Release Date: {{ game.released }}</p>
+                        <p>Rating: {{game.rating}}</p>
                     </div>
                 </div>
-            </a>
-        {% endfor %}
+            </div>
+        </a>
     </div>
+    {% endfor %}
 </div>
 
 {% endblock %}
