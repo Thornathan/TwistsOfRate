@@ -119,12 +119,55 @@ h5 {
   font-size: 1.5rem;
 }
 
+/* Card content */
+
+.card {
+  /* height: 35vh auto; */
+}
+
 .card-content ul li {
+  top: 0px;
   font-family: 'Oswald', sans-serif;
   font-size: 12px;
   font-weight: 100;
 }
 
+.card .card-content img {
+  width: 100%;
+  height: auto;
+}
+
+/* Card Imgs */
+#cardImgs {
+  object-fit: cover;
+  object-position: center top;
+  width: 100%;
+  height: 20vh;
+}
+
+/* Card border */
+.card .card-content {
+  padding: 10px;
+}
+
+/* about page card */
+#uniqueCard {
+  padding: 1px 5px 20px;
+}
+
+/* Card content like text */
+#cardTitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555555;
+}
+
+.card .card-content p {
+  font-size: 1rem;
+  color: #555555;
+}
+
+/* Img on home screen */
 #homeImg {
   width: 100%;
   height: auto; 
@@ -136,9 +179,6 @@ strong {
   color: orange;
 }
 
-.card .card-content {
-  padding: 1px 5px 20px;
-}
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px)  {
   body {

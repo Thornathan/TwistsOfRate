@@ -5,11 +5,11 @@
     {% for genre in genres %}
     <div>
         <a href="{% url 'genres_detail' genre.id %}">
-            <div class="col s4">
-                <div class="card">
+            <div class="col s12 m6 l6">
+                <div class="card #ef9a9a red lighten-3">
                     <div class="card-content">
-                    <img src={{ genre.image_background }} width="100%">
-                        <span class="card-title">{{ genre.name }}</span>
+                        <img src={{ genre.image_background }} id="cardImgs">
+                        <span class="card-title" id="cardTitle">{{ genre.name }}</span>
                     </div>
                 </div>
             </div>

@@ -2,9 +2,7 @@
 name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-
 [dev-packages]
-
 [packages]
 psycopg2-binary = "*"
 django = "*"
@@ -12,6 +10,5 @@ boto3 = "*"
 requests = "*"
 django-heroku = "*"
 gunicorn = "*"
-
 [requires]
 python_version = "3.7"
