@@ -12,5 +12,6 @@ urlpatterns = [
     path('games/<int:game_id>/', views.game_detail, name='game_detail'),
     path('blogs/', views.blogs_index, name='blogs_index'),
     path('blogs/<int:blog_id>/',  views.blog_detail, name='blog_detail'),
+    path('blogs/<int:blog_id>/add_blog_comment/', views.add_blog_comment, name='add_blog_comment'),
     path('accounts/signup/', views.signup, name='signup'),
 ]

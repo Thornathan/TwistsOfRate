@@ -39,10 +39,8 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
         
-class Comments(models.Model):
-    body = models.TextField()
-    date = models.DateField().auto_now
-    #rating = figure this out too
-    console = models.ForeignKey(Console, on_delete=models.CASCADE)
-    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+class BlogComment(models.Model):
+    body = models.TextField(max_length=350)
+    date = models.DateField(auto_now=True)
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
