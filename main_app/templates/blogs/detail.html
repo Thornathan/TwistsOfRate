@@ -21,9 +21,12 @@
     <div class="card">
         <div class="card-content">
             {% if comment.user.id|stringformat:"i" == user_id|stringformat:"i" %}
-                <p>{{ comment.body }}</p>
-                <p>By {{ comment.user.username }} on {{ comment.date }}</p>
-                <a href="{% url 'edit_blog_comment' comment.id %}" class="btn" id="btnBlogs">Edit</a>
+                <form action="{% url 'edit_blog_comment' comment.id %}" method="POST">
+                    {% csrf_token %}
+                    <input name="body" value="{{ comment.body }}">
+                    <p>By {{ comment.user.username }} on {{ comment.date }}</p>
+                    <input type="submit" class="btn" id="btnBlogs" value="Edit Comment">
+                </form>
                 <a href="" class="btn" id="btnBlogs">Delete</a>
             {% else %}
                 <p>{{ comment.body }}</p>
