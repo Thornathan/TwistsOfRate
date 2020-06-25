@@ -68,6 +68,10 @@ footer.page-footer {
   text-align: right;
 }
 
+#babyFooterImg {
+  width: 14px;
+}
+
 /* Hamburger  & Side Nav for mobile */
 #hamburger {
   visibility: hidden;
@@ -103,6 +107,10 @@ h5 {
   text-align: center;
   font-size: 1.5rem;
   text-decoration: underline;
+}
+
+h6 {
+  text-align: center;
 }
 
 /* Card content */
@@ -171,8 +179,14 @@ label {
   color: black;
 }
 
+/* Buttons */
 .btn {
   background-color: #ef9a9a;
+}
+
+#tagsBtn {
+  background-color: teal;
+  border-radius: 20px;
 }
 
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
@@ -263,62 +277,6 @@ form ul li {
   }
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
-  body {
-    background: url(/static/images/background4.svg); 
-    background-repeat: no-repeat;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    min-width: 100%;
-  }
-
-  nav {
-    background: linear-gradient(90deg, rgba(111,255,166,.10) 35%, rgba(111,255,144,.25) 100%);
-    background-color: transparent; 
-  }
-  
-  a.dropdown-trigger.btn {
-    visibility: visible;
-  }
-  
-  a.dropdown-trigger.btn:hover {
-    visibility: visible;
-  }
-
-  /* dropdown nav */
-  #hideMe {
-    visibility: hidden;
-  }
-  
-  /* Logo */
-  a.left.brand-logo {
-    visibility: visible;
-    font-size: 1.5rem;
-    font-family: 'Pacifico', cursive; 
-    color: #555555;
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  nav ul li {
-    visibility: hidden;
-  }
-
-  #logoImg {
-    width: 2.5rem;
-  }
-
-  #hamburger {
-    visibility: visible;
-  }
-  
-  #hamburgerDrop {
-    visibility: visible;
-  }
-}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   html{

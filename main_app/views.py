@@ -113,6 +113,7 @@ def blog_detail(request, blog_id):
   blog = Blog.objects.get(id=blog_id)
   return render(request, 'blogs/detail.html', { 'blog': blog })
 
+@login_required
 def add_blog_comment(request, blog_id):
   form = CommentForm(request.POST)
   if form.is_valid():
