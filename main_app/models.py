@@ -42,5 +42,8 @@ class Blog(models.Model):
 class BlogComment(models.Model):
     body = models.TextField(max_length=350)
     date = models.DateField(auto_now=True)
-    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blog, null=True, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.body
