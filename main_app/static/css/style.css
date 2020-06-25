@@ -131,6 +131,10 @@ h6 {
   text-align: center;
 }
 
+#comments {
+  text-decoration: underline;
+}
+
 /* Card content */
 
 .card {
@@ -213,6 +217,12 @@ label {
   justify-content: center;
 }
 
+#btnBlogs {
+  background-color: #6FFFE9;
+  color: #555555;
+  border-radius: 20px;
+}
+
 #tagLayout {
   text-align: center;
 }
@@ -290,6 +300,7 @@ form ul li {
     width: 2rem;
   }
 }
+
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   html{
