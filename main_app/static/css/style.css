@@ -47,27 +47,13 @@ a.left.brand-logo {
   color: #555555;
 }
 
-nav div ul li a img {
+#logoImg {
   width: 3rem;
 }
-
-/* dropdown nav */
-a.dropdown-trigger.btn{
-  background-color: transparent ;
-  box-shadow: transparent;
-  -webkit-box-shadow: none;
-  color: #555555;
-  padding: 0 6px;
-  font-weight: 900;
-  /* border-top: double 10px; */
-}
-
 
 nav {
   background: linear-gradient(90deg, rgba(255,111,111,.25) 35%, rgba(255,163,111,.25) 100%);
   background-color: transparent; 
-  /* box-shadow: none;
-  -webkit-box-shadow: none; */
 }
 
 /* footer */
@@ -82,13 +68,12 @@ footer.page-footer {
   text-align: right;
 }
 
-/* Hamburger */
+/* Hamburger  & Side Nav for mobile */
 #hamburger {
   visibility: hidden;
   position: absolute;
   right: 10px;
 }
-
 .sidenav {
   display: flex;
   flex-direction: column;
@@ -273,7 +258,7 @@ form ul li {
     color: #555555;
   }
 
-  nav div ul li a img {
+  #logoImg {
     width: 2rem;
   }
 }
@@ -322,12 +307,7 @@ form ul li {
     visibility: hidden;
   }
 
-  .nav-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-
-  nav div ul li a img {
+  #logoImg {
     width: 2.5rem;
   }
 
@@ -383,7 +363,7 @@ form ul li {
     justify-content: center;
   }
 
-  nav div ul li a img {
+  #logoImg {
     width: 2rem;
   }
 

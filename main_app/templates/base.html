@@ -25,8 +25,8 @@
       <div class="nav-wrapper">
         <!-- Heading Left -->
         <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;<img src="{% static 'images/Logo.png' %}"
-                alt="Logo">&nbsp;TwistsOfRate</a></li>
+          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;<img src="{% static 'images/Logo.png' %}" alt="Logo"
+                id="logoImg">&nbsp;TwistsOfRate</a></li>
         </ul>
         <!-- Heading Center -->
         <div class="brand-logo center" id="hideMe">
@@ -61,8 +61,12 @@
       <li><a href="{% url 'genres_index' %}">Genre</a></li>
       <li><a href="{% url 'games_index' %}">Games</a></li>
       <li><a href="{% url 'blogs_index' %}">Blog</a></li>
+      <!-- if user.is_authenticated  -->
+      <li><a href="{% url 'logout' %}">Log Out</a></li>
+      <!-- else -->
       <li><a href="{% url 'signup' %}">Sign Up</a></li>
       <li><a href="{% url 'login' %}">Log In</a></li>
+      <!-- endif -->
     </ul>
   </div>
 
