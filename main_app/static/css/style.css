@@ -279,11 +279,6 @@ form ul li {
     background-color: transparent; 
   }
 
-  /* Nav bar text */
-  nav ul li a {
-    font-size: 10px;
-  }
-
   /* Logo */
   a.left.brand-logo {
     font-size: 1.5rem;
@@ -295,7 +290,6 @@ form ul li {
     width: 2rem;
   }
 }
-
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   html{
@@ -328,11 +322,6 @@ form ul li {
     justify-content: center;
     align-items: center;
   }
-  
-  .nav-wrapper {
-    display: flex;
-    justify-content: center;
-  }
 
   #logoImg {
     width: 2rem;
@@ -357,5 +346,4 @@ form ul li {
   .page-footer {
     font-size: 10px;
   }
-
 }
