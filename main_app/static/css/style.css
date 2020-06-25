@@ -35,15 +35,26 @@ nav ul li a {
   font-weight: 900;
 }
 
+nav {
+  background: linear-gradient(90deg, rgba(255,111,111,.35) 35%, rgba(255,163,111,.35) 100%);
+  background-color: transparent; 
+}
+
 ul li a {
   padding: 0 6px;
+}
+
+.active {
+  text-decoration: underline;
+  background-color: rgba(255,111,111,.50);
+  color: white;
+  font-weight: 900;
 }
 
 /* Logo */
 a.left.brand-logo {
   font-family: 'Pacifico', cursive;
   font-size: 1.75rem;
-  font-family: 'Pacifico', cursive; 
   color: #555555;
 }
 
@@ -51,9 +62,28 @@ a.left.brand-logo {
   width: 3rem;
 }
 
-nav {
-  background: linear-gradient(90deg, rgba(255,111,111,.25) 35%, rgba(255,163,111,.25) 100%);
-  background-color: transparent; 
+/* Hamburger  & Side Nav for mobile */
+#hamburger {
+  position: absolute;
+  right: 10px;
+}
+
+/* Sidenav */
+#sideNavLogoTxt {
+  font-family: 'Pacifico', cursive; 
+  font-size: 2rem;
+}
+
+#sideNavLogoImg {
+  width: 3rem;
+}
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(90deg, rgba(255,111,111,.90) 35%, rgba(255,163,111,.75) 100%);
+  justify-content: start;
+  text-align: center;
 }
 
 /* footer */
@@ -72,19 +102,6 @@ footer.page-footer {
   width: 14px;
 }
 
-/* Hamburger  & Side Nav for mobile */
-#hamburger {
-  visibility: hidden;
-  position: absolute;
-  right: 10px;
-}
-.sidenav {
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(135deg, rgba(115,206,201,1) 35%, rgba(11,186,183,1) 100%);
-  align-content: center;
-  justify-content: start;
-}
 
 /* body content */
 h1 {
@@ -99,6 +116,7 @@ h2 {
   text-align: center;
   font-size: 2.5rem;
   text-decoration: underline;
+  margin: 5px 0px 14px;
 }
 
 h5 {
@@ -129,6 +147,10 @@ h6 {
 .card .card-content img {
   width: 100%;
   height: auto;
+}
+
+.section {
+  padding-top: 0;
 }
 
 /* Card Imgs */
@@ -187,6 +209,16 @@ label {
 #tagsBtn {
   background-color: teal;
   border-radius: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+#tagLayout {
+  text-align: center;
+}
+
+#platformSect, #storeSect {
+  text-align: center;
 }
 
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
@@ -201,7 +233,6 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 form ul li {
   font-style: italic;
   font-size: .75rem;
-
 }
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px)  {
@@ -222,12 +253,6 @@ form ul li {
   /* Nav bar text */
   nav ul li a {
     font-size: 18px;
-  }
-
-  /* dropdown nav */
-  a.dropdown-trigger.btn{
-    font-size: 18px;
-    visibility: visible;
   }
 
   /* Logo */
@@ -257,12 +282,6 @@ form ul li {
   /* Nav bar text */
   nav ul li a {
     font-size: 10px;
-  }
-
-  /* dropdown nav */
-  a.dropdown-trigger.btn{
-    font-size: 10px;
-    visibility: visible;
   }
 
   /* Logo */
@@ -297,17 +316,11 @@ form ul li {
     background: linear-gradient(90deg, rgba(111,255,166,.50) 35%, rgba(111,255,144,.25) 100%);
     background-color: transparent; 
   }
-  
-  /* dropdown nav */
-  #hideMe {
-    visibility: hidden;
-  }
 
   /* Logo */
   a.left.brand-logo {
     font-size: 1.25rem;
     font-family: 'Pacifico', cursive; 
-    visibility: visible;
     color: #555555;
     height: 100%;
     position: relative;
@@ -329,18 +342,6 @@ form ul li {
     width: 100%;
     height: auto; 
     object-fit: cover;
-  }
-
-  #hamburger {
-    visibility: visible;
-  }
-  
-  #hamburgerDrop {
-    visibility: visible;
-  }
-
-  #hideMe {
-    visibility: hidden;
   }
 
   h1 {

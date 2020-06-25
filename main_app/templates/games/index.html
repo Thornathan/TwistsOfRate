@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<h1>Games</h1>
 <div class="row">
     {% for game in games %}
     <div>
@@ -24,7 +25,7 @@
                         <div class="section">
                             <p>Genre:
                                 {% for genres in game.genres %}
-                                {{ genres.name }}
+                                {{ genres.name }}.
                                 {% endfor %}
                             </p>
                             <p>Release Date: {{ game.released }}</p>
