@@ -5,7 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Console, Game, Blog
+from .models import Console, Game, Blog, BlogComment
 import uuid
 import boto3
 import requests
@@ -112,4 +112,11 @@ def blog_detail(request, blog_id):
   blog = Blog.objects.get(id=blog_id)
   return render(request, 'blogs/detail.html', { 'blog': blog })
 
-
+def add_blog_comment(request, blog_id):
+  form = CommentForm(request.POST)
+  if form.is_valid():
+    new_comment = form.save(commit=False)
+    new_comment.blog_id = blog_id
+    new_comment.user = request.user
+    new_comment.save()
+  return redirect('blog_detail', blog_id=blog_id)
