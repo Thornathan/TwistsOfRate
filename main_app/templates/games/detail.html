@@ -5,11 +5,12 @@
     <div class="col s12 m12 l12">
         <div class="card #ef9a9a red lighten-3">
             <div class="card-content">
-                <img src={{ game.background_image }} width="100%">
+                <img src={{ game.background_image }}>
             </div>
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col s12 m12 l12">
         <div class="card #ef9a9a red lighten-3">
@@ -25,6 +26,7 @@
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col s12 m12 l12">
         <div class="card #ef9a9a red lighten-3">
@@ -41,16 +43,29 @@
                     ESRB Rating: {{ game.esrb_rating.name }}
                     <br>
                     {{game.description_raw}}
-                    <br>
-                    <h5>Tags:</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m12 l12">
+        <div class="card #ef9a9a red lighten-3">
+            <div class="card-content">
+                <div class="section">
+                    <h2>Tags:</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="section">
                     {% for tag in game.tags %}
-                    ({{ tag.name }})
+                    <a href="#" class="btn" id="tagsBtn">
+                        ({{ tag.name }})
+                    </a>
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col s12 m12 l12">
         <div class="card #ef9a9a red lighten-3">
@@ -61,49 +76,57 @@
                 </div>
                 <div class="section">
                     {% for rating in game.ratings %}
-                    {{rating.id}}
-                    {{rating.title}}
-                    {{rating.count}}
-                    {{rating.percent}}%
+                    <div class="section">
+                        <h6>
+                            ( {{rating.id}} )
+                            {{rating.title}} -
+                            Rated by {{rating.count}} People -
+                            {{rating.percent}}%
+                        </h6>
+                    </div>
                     {% endfor %}
-                    {{game.rating}}
+                    <div class="section">
+                        <div class="divider"></div>
+                        <h6>Overall Rating: {{game.rating}}</h6>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="col s12 m12 l12">
-    <div class="card #ef9a9a red lighten-3">
-        <div class="card-content">
-            <div class="section">
-                <h2>Developers</h2>
-            </div>
-            <div class="divider"></div>
-            <div class="section">
-                {% for developer in game.developers %}
-                <h5>{{ developer.name }}</h5>
-                <img src={{ developer.image_background }}>
-                {% endfor %}
-            </div>
-            <div class="section">
-                <h2>Publishers</h2>
-            </div>
-            <div class="divider"></div>
-            <div class="section">
-                {% for publisher in game.publishers %}
-                <h5>{{ publisher.name }}</h5>
-                <img src={{ publisher.image_background }}>
-                {% endfor %}
-            </div>
-            <div class="section">
 
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card #ef9a9a red lighten-3">
+            <div class="card-content">
+                <div class="section">
+                    <h2>Developers</h2>
+                    <div class="divider"></div>
+                    {% for developer in game.developers %}
+                    <h6>{{ developer.name }}</h6>
+                    <!-- <img src={{ developer.image_background }} id="cardmgs"> -->
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>
-<div class="row">
     <div class="col s12 m12 l12">
+        <div class="card #ef9a9a red lighten-3">
+            <div class="card-content">
+                <div class="section">
+                    <h2>Publishers</h2>
+                </div>
+                <div class="divider"></div>
+                <div class="section">
+                    {% for publisher in game.publishers %}
+                    <h6>{{ publisher.name }}</h6>
+                    <!-- <img src={{ publisher.image_background }} id="cardImgs"> -->
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s6 m6 l6">
         <div class="card #ef9a9a red lighten-3">
             <div class="card-content">
                 <div class="section">
@@ -112,15 +135,13 @@
                 </div>
                 {% for platform in game.platforms %}
                 <div class="section">
-                    {{platform.platform.name}}
+                    {{platform.platform.name}} ,
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col s12 m12 l12">
+    <div class="col s6 m6 l6">
         <div class="card #ef9a9a red lighten-3">
             <div class="card-content">
                 <div class="section">

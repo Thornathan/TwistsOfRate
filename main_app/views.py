@@ -14,7 +14,25 @@ import requests
 # Create your views here.
 
 def home(request):
-  return render(request, 'home.html')
+
+  upcoming_games = "https://api.rawg.io/api/games?dates=2020-06-25,2020-10-10&page_size=6&ordering=-added"
+  recent_releases = "https://api.rawg.io/api/games?dates=2020-05-20,2020-06-24&page_size=6&ordering=-added"
+  highest_rated = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&page_size=6&ordering=-added"
+
+  headers = {
+    'x-rapidapi-host': "rawg-video-games-database.p.rapidapi.com",
+    'x-rapidapi-key': "e623d7c465mshd3263eeaaa7033dp1631f8jsn581376b2f094"
+    }
+
+  ug_response = requests.request("GET", upcoming_games, headers=headers)
+  rr_response = requests.request("GET", recent_releases, headers=headers)
+  hr_response = requests.request("GET", highest_rated, headers=headers)
+
+  games = ug_response.json()['results']
+  releases = rr_response.json()['results']
+  ratings = hr_response.json()['results']
+
+  return render(request, 'home.html', {'games': games, 'releases': releases, 'ratings': ratings})
 
 def about(request):
   return render(request, 'about.html')
@@ -58,7 +76,7 @@ def console_detail(request, console_id):
   return render(request, 'consoles/detail.html', {'console': console })
 
 def games_index(request):
-  url = "https://rawg-video-games-database.p.rapidapi.com/games?page_size=200"
+  url = "https://rawg-video-games-database.p.rapidapi.com/games"
 
   headers = {
       'x-rapidapi-host': "rawg-video-games-database.p.rapidapi.com",
@@ -114,6 +132,7 @@ def blog_detail(request, blog_id):
   blog = Blog.objects.get(id=blog_id)
   return render(request, 'blogs/detail.html', { 'blog': blog })
 
+@login_required
 def add_blog_comment(request, blog_id):
   form = CommentForm(request.POST)
   if form.is_valid():
