@@ -41,11 +41,11 @@ def consoles_index(request):
     }
 
   response = requests.request("GET", url, headers=headers)
-  consoles = Console.objects.all()
-  return render(request, 'consoles/index.html', {'response': response, 'consoles': consoles })
+  consoles = response.json()['results']
+  return render(request, 'consoles/index.html', {'consoles': consoles })
 
 def console_detail(request, console_id):
-  url = "https://rawg-video-games-database.p.rapidapi.com/platforms/%7Bid%7D"
+  url = f"https://rawg-video-games-database.p.rapidapi.com/platforms/{console_id}"
 
   headers = {
       'x-rapidapi-host': "rawg-video-games-database.p.rapidapi.com",
@@ -53,8 +53,8 @@ def console_detail(request, console_id):
       }
 
   response = requests.request("GET", url, headers=headers)
-  console = Console.objects.get(id=console_id)
-  return render(request, 'consoles/detail.html', {'response': response, 'console': console })
+  console = response.json()
+  return render(request, 'consoles/detail.html', {'console': console })
 
 def games_index(request):
   url = "https://rawg-video-games-database.p.rapidapi.com/games?page_size=200"
