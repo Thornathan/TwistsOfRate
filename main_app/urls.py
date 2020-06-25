@@ -15,6 +15,7 @@ urlpatterns = [
     path('blogs/<int:blog_id>/',  views.blog_detail, name='blog_detail'),
     path('blogs/create/',  views.BlogCreate.as_view(), name='blogs_create'),
     path('blogs/<int:pk>/update/',  views.BlogUpdate.as_view(), name='blogs_update'),
+    path('blogs/<int:pk>/delete/',  views.BlogDelete.as_view(), name='blogs_delete'),
     path('blogs/<int:blog_id>/add_blog_comment/', views.add_blog_comment, name='add_blog_comment'),
     path('accounts/signup/', views.signup, name='signup'),
 ]

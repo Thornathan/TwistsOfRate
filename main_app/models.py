@@ -13,9 +13,6 @@ class Game(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
-        return reverse('games_detail', kwargs={'pk':self.id})
-
 class Console(models.Model):
     name = models.CharField(max_length=100)
     manufacturer = models.CharField(max_length=100)
@@ -25,19 +22,17 @@ class Console(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
-        return reverse('detail', kwargs={'console_id': self.id})
-
 class Blog(models.Model):
     title = models.CharField(max_length=100)
     date = models.DateField(auto_now=True)
-    body = models.TextField()
-    console = models.ForeignKey(Console, on_delete=models.CASCADE)
-    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    body = models.TextField(max_length=6000)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('blog_detail', kwargs={'blog_id': self.id})
         
 class BlogComment(models.Model):
     body = models.TextField(max_length=350)

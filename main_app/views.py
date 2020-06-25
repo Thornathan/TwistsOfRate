@@ -140,3 +140,6 @@ class BlogUpdate(UpdateView):
   model = Blog
   fields = ['title', 'body']
 
+class BlogDelete(DeleteView):
+  model = Blog
+  success_url = '/blogs/'
