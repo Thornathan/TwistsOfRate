@@ -10,6 +10,8 @@
                 <li>{{ blog.date }}</li>
                 <li>{{ blog.body }}</li>
             </ul>
+            <a href="{% url 'blogs_update' blog.id %}" class="btn">Edit Blog</a>
+            <a href="{% url 'blogs_delete' blog.id %}" class="btn">Delete Blog</a>
         </div>
     </div>
 </div>
@@ -28,7 +30,6 @@
     </div>
 </div>
 <br>
-<!-- <p>Comments: {{ blog.comment.count }}</p> -->
 {% for comment in blog.blogcomment_set.all %}
     <div class="row">
         <div class="card">
