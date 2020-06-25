@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<h1>{{ game.name }}</h1>
 <div class="row">
     <div class="col s12 m12 l12">
         <div class="card #ef9a9a red lighten-3">
@@ -16,7 +17,7 @@
         <div class="card #ef9a9a red lighten-3">
             <div class="card-content">
                 <div class="section">
-                    <h5>Game Preview</h5>
+                    <h2>Game Preview</h2>
                     <div class="video-container">
                         <iframe width="853" height="480" src="{{ game.clip.clip }}" frameborder="0" allowfullscreen
                             autoplay='0'></iframe>
@@ -54,7 +55,7 @@
                     <h2>Tags:</h2>
                     <div class="divider"></div>
                 </div>
-                <div class="section">
+                <div class="section" id="tagLayout">
                     {% for tag in game.tags %}
                     <a href="#" class="btn" id="tagsBtn">
                         ({{ tag.name }})
@@ -126,7 +127,7 @@
             </div>
         </div>
     </div>
-    <div class="col s6 m6 l6">
+    <div class="col s12 m12 l12">
         <div class="card #ef9a9a red lighten-3">
             <div class="card-content">
                 <div class="section">
@@ -134,14 +135,14 @@
                     <div class="divider"></div>
                 </div>
                 {% for platform in game.platforms %}
-                <div class="section">
-                    {{platform.platform.name}} ,
+                <div class="section" id="platformSect">
+                    {{platform.platform.name}}
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
-    <div class="col s6 m6 l6">
+    <div class="col s12 m12 l12">
         <div class="card #ef9a9a red lighten-3">
             <div class="card-content">
                 <div class="section">
@@ -149,7 +150,7 @@
                     <div class="divider"></div>
                 </div>
                 {% for store in game.stores %}
-                <div class="section">
+                <div class="section" id="storeSect">
                     <a href={{store.url}}>{{store.store.name}}</a>
                 </div>
                 {% endfor %}
@@ -168,12 +169,18 @@
                 </div>
                 <div class="section">
                     {% if game.reddit_url %}
-                    Subreddit Page:<a href={{game.reddit_url}}>{{game.reddit_description}}</a>
+                    Subreddit Page:
+                    <br>
+                    <a href={{game.reddit_url}}>{{game.reddit_description}}</a>
                     {% else %}
 
                     {% endif %}
+                </div>
+                <div class="section">
                     {% if game.website %}
-                    Game Website:<a href={{game.website}}>{{game.name}}</a>
+                    Game Website:
+                    <br>
+                    <a href={{game.website}}>{{game.name}}</a>
                     {% else %}
 
                     {% endif %}

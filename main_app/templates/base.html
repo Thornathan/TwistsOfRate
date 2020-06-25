@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 
@@ -25,47 +26,71 @@
       <div class="nav-wrapper">
         <!-- Heading Left -->
         <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;<img src="{% static 'images/Logo.png' %}" alt="Logo"
-                id="logoImg">&nbsp;TwistsOfRate</a></li>
+          <li>
+            <a href="/" class="left brand-logo">&nbsp;&nbsp;<img src="{% static 'images/Logo.png' %}" alt="Logo"
+                id="logoImg">&nbsp;TwistsOfRate</a>
+          </li>
         </ul>
         <!-- Heading Center -->
-        <div class="brand-logo center" id="hideMe">
-          <ul>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'consoles_index' %}">Consoles</a></li>
-            <li><a href="{% url 'genres_index' %}">Genre</a></li>
-            <li><a href="{% url 'games_index' %}">Games</a></li>
-            <li><a href="{% url 'blogs_index' %}">Blogs</a></li>
+        <div class="brand-logo center">
+          <ul class="right hide-on-med-and-down">
+            <li class="{% if request.resolver_match.url_name == "about" %}active{% endif %}"><a
+                href="{% url 'about' %}">About</a></li>
+            <li class="{% if request.resolver_match.url_name == "consoles_index" %}active{% endif %}"><a
+                href="{% url 'consoles_index' %}">Consoles</a></li>
+            <li class="{% if request.resolver_match.url_name == "genres_index" %}active{% endif %}"><a
+                href="{% url 'genres_index' %}">Genre</a></li>
+            <li class="{% if request.resolver_match.url_name == "games_index" %}active{% endif %}"><a
+                href="{% url 'games_index' %}">Games</a></li>
+            <li class="{% if request.resolver_match.url_name == "blogs_index" %}active{% endif %}"><a
+                href="{% url 'blogs_index' %}">Blogs</a></li>
           </ul>
         </div>
         <!-- Heading Right -->
-        <ul class="brand-logo right" id="hideMe">
+        <ul class="brand-logo right hide-on-med-and-down">
           {% if user.is_authenticated %}
-          <li><a href="{% url 'logout' %}">Log Out</a></li>
+          <li class="{% if request.resolver_match.url_name == "logout" %}active{% endif %}"><a
+              href="{% url 'logout' %}">Log Out</a></li>
           {% else %}
-          <li><a href="{% url 'signup' %}">Sign Up</a></li>
-          <li><a href="{% url 'login' %}">Log In</a></li>
+          <li class="{% if request.resolver_match.url_name == "signup" %}active{% endif %}"><a
+              href="{% url 'signup' %}">Sign Up</a></li>
+          <li class="{% if request.resolver_match.url_name == "login" %}active{% endif %}"><a
+              href="{% url 'login' %}">Log In</a></li>
           {% endif %}
         </ul>
+
         <!-- creates hamburger -->
-        <div class="nav-wrapper" id="hamburger">
+        <div class="nav-wrapper right-align hide-on-large-only" id="hamburger">
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="right material-icons">menu</i></a>
         </div>
     </nav>
   </header>
+
   <!-- Sidenav -->
-  <div class="sidenav" id="mobile-demo">
+  <div class="sidenav" id="mobile-demo" id="sideNavText">
     <ul>
-      <li><a href="{% url 'about' %}">About</a></li>
-      <li><a href="{% url 'consoles_index' %}">Consoles</a></li>
-      <li><a href="{% url 'genres_index' %}">Genre</a></li>
-      <li><a href="{% url 'games_index' %}">Games</a></li>
-      <li><a href="{% url 'blogs_index' %}">Blog</a></li>
+      <li>
+        <a href="/" class="brand-logo" id="sideNavLogoTxt">&nbsp;&nbsp;<img src="{% static 'images/Logo.png' %}"
+            alt="Logo" id="sideNavLogoImg">&nbsp;TwistsOfRate</a>
+      </li>
+      <li class="{% if request.resolver_match.url_name == "about" %}active{% endif %}"><a
+          href="{% url 'about' %}">About</a></li>
+      <li class="{% if request.resolver_match.url_name == "consoles_index" %}active{% endif %}"><a
+          href="{% url 'consoles_index' %}">Consoles</a></li>
+      <li class="{% if request.resolver_match.url_name == "genres_index" %}active{% endif %}"><a
+          href="{% url 'genres_index' %}">Genre</a></li>
+      <li class="{% if request.resolver_match.url_name == "games_index" %}active{% endif %}"><a
+          href="{% url 'games_index' %}">Games</a></li>
+      <li class="{% if request.resolver_match.url_name == "blogs_index" %}active{% endif %}"><a
+          href="{% url 'blogs_index' %}">Blogs</a></li>
       {% if user.is_authenticated %}
-      <li><a href="{% url 'logout' %}">Log Out</a></li>
+      <li class="{% if request.resolver_match.url_name == "logout" %}active{% endif %}"><a href="{% url 'logout' %}">Log
+          Out</a></li>
       {% else %}
-      <li><a href="{% url 'signup' %}">Sign Up</a></li>
-      <li><a href="{% url 'login' %}">Log In</a></li>
+      <li class="{% if request.resolver_match.url_name == "signup" %}active{% endif %}"><a
+          href="{% url 'signup' %}">Sign Up</a></li>
+      <li class="{% if request.resolver_match.url_name == "login" %}active{% endif %}"><a href="{% url 'login' %}">Log
+          In</a></li>
       {% endif %}
     </ul>
   </div>
@@ -75,14 +100,18 @@
     {% endblock %}
   </main>
 
-
   <script>
     // Hamburger open sidebar
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.sidenav');
-      var instances = M.Sidenav.init(elems);
+      var instances = M.Sidenav.init(elems, { preventScrolling: true, draggable: true });
     });
   </script>
+  <!-- <script type="text/javascript">
+    $(document).on('click', 'nav div ul li', function(){
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+  </script> -->
   <footer class="page-footer">
     <div class="left">
       &nbsp;Presented by the XÆA-12 Team
