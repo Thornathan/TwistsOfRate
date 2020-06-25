@@ -6,6 +6,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('consoles/', views.consoles_index, name='consoles_index'),
     path('consoles/<int:console_id>/', views.console_detail, name='console_detail'),
+    path('games/<int:console_id>/add_console_comment/', views.add_console_comment, name='add_console_comment'),
     path('genres/', views.genres_index, name='genres_index'),
     path('genres/<int:genre_id>/', views.genres_detail, name='genres_detail'),
     path('games/', views.games_index, name='games_index'),
@@ -17,5 +18,6 @@ urlpatterns = [
     path('blogs/<int:pk>/update/',  views.BlogUpdate.as_view(), name='blogs_update'),
     path('blogs/<int:pk>/delete/',  views.BlogDelete.as_view(), name='blogs_delete'),
     path('blogs/<int:blog_id>/add_blog_comment/', views.add_blog_comment, name='add_blog_comment'),
+    path('blogs/<int:blog_id>/edit_blog_comment/', views.edit_blog_comment, name='edit_blog_comment'),
     path('accounts/signup/', views.signup, name='signup'),
 ]

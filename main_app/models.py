@@ -52,3 +52,13 @@ class GameComment(models.Model):
 
     def __str__(self):
         return self.body
+
+class ConsoleComment(models.Model):
+    body = models.TextField(max_length=350)
+    date = models.DateField(auto_now=True)
+    console = models.ForeignKey(Console, null=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    api_id = models.IntegerField()
+
+    def __str__(self):
+        return self.body

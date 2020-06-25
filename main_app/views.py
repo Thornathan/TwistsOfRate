@@ -5,8 +5,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Console, Game, Blog, BlogComment, GameComment
-from .forms import CommentForm, GCommentForm
+from .models import Console, Game, Blog, BlogComment, GameComment, ConsoleComment
+from .forms import CommentForm, GCommentForm, CCommentForm
 import uuid
 import boto3
 import requests
@@ -73,7 +73,8 @@ def console_detail(request, console_id):
 
   response = requests.request("GET", url, headers=headers)
   console = response.json()
-  return render(request, 'consoles/detail.html', {'console': console })
+  comments = ConsoleComment.objects.filter(api_id=console_id)
+  return render(request, 'consoles/detail.html', {'console': console, 'comments': comments })
 
 def games_index(request):
   url = "https://rawg-video-games-database.p.rapidapi.com/games"
@@ -130,7 +131,8 @@ def blogs_index(request):
 
 def blog_detail(request, blog_id):
   blog = Blog.objects.get(id=blog_id)
-  return render(request, 'blogs/detail.html', { 'blog': blog })
+  user_id = request.user.id
+  return render(request, 'blogs/detail.html', { 'blog': blog, 'user_id': user_id })
 
 @login_required
 def add_blog_comment(request, blog_id):
@@ -142,6 +144,12 @@ def add_blog_comment(request, blog_id):
     new_comment.save()
   return redirect('blog_detail', blog_id=blog_id)
 
+@login_required
+def edit_blog_comment(request, comment_id):
+  user_id = request.user.id
+  return redirect('blog_detail', { 'comment_id':comment_id, 'user_id': user_id })
+
+@login_required
 def add_game_comment(request, game_id):
   form = GCommentForm(request.POST)
   if form.is_valid():
@@ -150,6 +158,16 @@ def add_game_comment(request, game_id):
     new_comment.user = request.user
     new_comment.save()
   return redirect('game_detail', game_id=game_id)
+
+@login_required
+def add_console_comment(request, console_id):
+  form = CCommentForm(request.POST)
+  if form.is_valid():
+    new_comment = form.save(commit=False)
+    new_comment.api_id = console_id
+    new_comment.user = request.user
+    new_comment.save()
+  return redirect('console_detail', console_id=console_id)
 
 class BlogCreate(LoginRequiredMixin, CreateView):
   model = Blog
