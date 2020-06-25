@@ -79,7 +79,8 @@ def game_detail(request, game_id):
 
   response = requests.request("GET", url, headers=headers)
   game = response.json()
-  return render(request, 'games/detail.html', {'game': game })
+  comments = GameComment.objects.filter(api_id=game_id)
+  return render(request, 'games/detail.html', {'game': game, 'comments': comments })
 
 def genres_index(request):
   url = "https://rawg-video-games-database.p.rapidapi.com/genres?ordering=name"
@@ -126,15 +127,18 @@ def add_game_comment(request, game_id):
   form = GCommentForm(request.POST)
   if form.is_valid():
     new_comment = form.save(commit=False)
-    new_comment.game_id = game_id
+    new_comment.api_id = game_id
     new_comment.user = request.user
     new_comment.save()
   return redirect('game_detail', game_id=game_id)
 
-class BlogCreate(CreateView):
+class BlogCreate(LoginRequiredMixin, CreateView):
   model = Blog
   fields = ['title', 'body']
-  success_url = '/blogs/'
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class BlogUpdate(UpdateView):
   model = Blog

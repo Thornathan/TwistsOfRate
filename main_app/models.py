@@ -48,6 +48,7 @@ class GameComment(models.Model):
     date = models.DateField(auto_now=True)
     game = models.ForeignKey(Game, null=True, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    api_id = models.IntegerField()
 
     def __str__(self):
         return self.body
