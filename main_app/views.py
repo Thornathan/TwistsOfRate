@@ -159,10 +159,10 @@ class BlogCreate(LoginRequiredMixin, CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class BlogUpdate(UpdateView):
+class BlogUpdate(LoginRequiredMixin, UpdateView):
   model = Blog
   fields = ['title', 'body']
 
-class BlogDelete(DeleteView):
+class BlogDelete(LoginRequiredMixin, DeleteView):
   model = Blog
   success_url = '/blogs/'
