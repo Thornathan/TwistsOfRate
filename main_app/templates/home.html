@@ -5,81 +5,54 @@
     <h5>- Confessions of a Game Freak -</h5>
 </div>
 <br>
-<h2>Highest Rated</h2>
+
 <div class="row">
-    <div class="col s12">
-        <h5>Top Rated Consoles</h5>
-        <div class="card">
-            <div class="card-content">
-                <ul>
-                    <li>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam soluta repudiandae omnis
-                        delectus voluptas vero repellat obcaecati dolorum culpa aliquam facere qui, quam animi?
-                        Reprehenderit recusandae deserunt laudantium distinctio inventore.
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col s12">
-        <h5>Top Rated Games</h5>
-        <div class="card">
-            <div class="card-content">
-                <ul>
-                    <li>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati distinctio molestiae natus!
-                        Quia voluptas a iusto aliquam molestiae. Voluptatum excepturi impedit distinctio voluptates!
-                        Fuga, nostrum facere. Accusamus ratione dolorum nisi!
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <div class="row">
+    <h2>Recent Releases</h2>
+    {% for release in releases %}
+        <a href="{% url 'game_detail' release.id %}">
+            <div class="col s12 m4 l4">
+                <div class="card #ef9a9a red lighten-3">
+                    <div class="card-content">
+                        <img src={{ release.background_image }} id="cardImgs">
+                        <span class="card-title" id="cardTitle">{{ release.name }}</span>
+                    </div>
+                </div>
+            </div> 
+        </a>
+    {% endfor %}
 </div>
-<br>
-<h2>Game News</h2>
 <div class="row">
-    <div class="col s12 m4 l4">
-        <h5>Then</h5>
-        <div class="card">
-            <div class="card-content">
-                <ul>
-                    <li>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae consectetur autem
-                        distinctio eos fuga, vero sunt qui dolor, culpa recusandae, laudantium minima ducimus beatae
-                        saepe nisi illum exercitationem provident iste.
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m4 l4">
-        <h5>Today</h5>
-        <div class="card">
-            <div class="card-content">
-                <ul>
-                    <li>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui unde debitis odit, nam repellat
-                        esse perferendis nulla, aliquam placeat delectus nihil facere nostrum earum, ea minima
-                        laudantium maiores tenetur rerum.
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m4 l4">
-        <h5>Tomorrow</h5>
-        <div class="card">
-            <div class="card-content">
-                <ul>
-                    <li>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, voluptatibus officia sit sed
-                        commodi laudantium! Esse, omnis? Ut, ea vel numquam tenetur in possimus. Corporis pariatur natus
-                        non necessitatibus delectus.
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <div class="row">
+    <h2>Highest Rated</h2>
+    {% for rating in ratings %}
+        <a href="{% url 'game_detail' rating.id %}">
+            <div class="col s12 m4 l4">
+                <div class="card #ef9a9a red lighten-3">
+                    <div class="card-content">
+                        <img src={{ rating.background_image }} id="cardImgs">
+                        <span class="card-title" id="cardTitle">{{ rating.name }}</span>
+                    </div>
+                </div>
+            </div> 
+        </a>
+    {% endfor %}
+</div>
+<div class="row">
+    <div class="row">
+    <h2>Most Anticipated Upcoming Games</h2>
+    {% for game in games %}
+        <a href="{% url 'game_detail' game.id %}">
+            <div class="col s12 m4 l4">
+                <div class="card #ef9a9a red lighten-3">
+                    <div class="card-content">
+                        <img src={{ game.background_image }} id="cardImgs">
+                        <span class="card-title" id="cardTitle">{{ game.name }}</span>
+                    </div>
+                </div>
+            </div> 
+        </a>
+    {% endfor %}
+</div>
 </div>
 {% endblock %}
