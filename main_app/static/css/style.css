@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
   height: 100%;
-  background: url(/static/images/background.svg); 
+  background: url(/static/images/background1.svg); 
   background-size: contain; 
   background-repeat: no-repeat;
   font-family: 'Oswald', sans-serif;
@@ -266,7 +266,7 @@ form ul li {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   body {
-    background: url(/static/images/background4.svg); 
+    background: url(/static/images/background3.svg); 
     background-repeat: no-repeat;
     width: 100%;
     height: auto;
@@ -298,7 +298,7 @@ form ul li {
   }
 
   body {
-    background: url(/static/images/background4.svg); 
+    background: url(/static/images/background3.svg); 
     background-repeat: no-repeat;
     width: 100%;
     height: auto;
