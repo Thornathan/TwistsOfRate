@@ -5,8 +5,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Console, Game, Blog, BlogComment
-from .forms import CommentForm
+from .models import Console, Game, Blog, BlogComment, GameComment
+from .forms import CommentForm, GCommentForm
 import uuid
 import boto3
 import requests
@@ -14,7 +14,25 @@ import requests
 # Create your views here.
 
 def home(request):
-  return render(request, 'home.html')
+
+  upcoming_games = "https://api.rawg.io/api/games?dates=2020-06-25,2020-10-10&page_size=6&ordering=-added"
+  recent_releases = "https://api.rawg.io/api/games?dates=2020-05-20,2020-06-24&page_size=6&ordering=-added"
+  highest_rated = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&page_size=6&ordering=-added"
+
+  headers = {
+    'x-rapidapi-host': "rawg-video-games-database.p.rapidapi.com",
+    'x-rapidapi-key': "e623d7c465mshd3263eeaaa7033dp1631f8jsn581376b2f094"
+    }
+
+  ug_response = requests.request("GET", upcoming_games, headers=headers)
+  rr_response = requests.request("GET", recent_releases, headers=headers)
+  hr_response = requests.request("GET", highest_rated, headers=headers)
+
+  games = ug_response.json()['results']
+  releases = rr_response.json()['results']
+  ratings = hr_response.json()['results']
+
+  return render(request, 'home.html', {'games': games, 'releases': releases, 'ratings': ratings})
 
 def about(request):
   return render(request, 'about.html')
@@ -58,7 +76,7 @@ def console_detail(request, console_id):
   return render(request, 'consoles/detail.html', {'console': console })
 
 def games_index(request):
-  url = "https://rawg-video-games-database.p.rapidapi.com/games?page_size=200"
+  url = "https://rawg-video-games-database.p.rapidapi.com/games"
 
   headers = {
       'x-rapidapi-host': "rawg-video-games-database.p.rapidapi.com",
@@ -79,7 +97,8 @@ def game_detail(request, game_id):
 
   response = requests.request("GET", url, headers=headers)
   game = response.json()
-  return render(request, 'games/detail.html', {'game': game })
+  comments = GameComment.objects.filter(api_id=game_id)
+  return render(request, 'games/detail.html', {'game': game, 'comments': comments })
 
 def genres_index(request):
   url = "https://rawg-video-games-database.p.rapidapi.com/genres?ordering=name"
@@ -121,7 +140,29 @@ def add_blog_comment(request, blog_id):
     new_comment.blog_id = blog_id
     new_comment.user = request.user
     new_comment.save()
-  else:
-    print(request.POST)
-    print(form.errors)
   return redirect('blog_detail', blog_id=blog_id)
+
+def add_game_comment(request, game_id):
+  form = GCommentForm(request.POST)
+  if form.is_valid():
+    new_comment = form.save(commit=False)
+    new_comment.api_id = game_id
+    new_comment.user = request.user
+    new_comment.save()
+  return redirect('game_detail', game_id=game_id)
+
+class BlogCreate(LoginRequiredMixin, CreateView):
+  model = Blog
+  fields = ['title', 'body']
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
+
+class BlogUpdate(UpdateView):
+  model = Blog
+  fields = ['title', 'body']
+
+class BlogDelete(DeleteView):
+  model = Blog
+  success_url = '/blogs/'

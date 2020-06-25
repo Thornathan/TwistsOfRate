@@ -17,7 +17,7 @@
         <div class="card #ef9a9a red lighten-3">
             <div class="card-content">
                 <div class="section">
-                    <h5>Game Preview</h5>
+                    <h2>Game Preview</h2>
                     <div class="video-container">
                         <iframe width="853" height="480" src="{{ game.clip.clip }}" frameborder="0" allowfullscreen
                             autoplay='0'></iframe>
@@ -190,4 +190,51 @@
     </div>
 </div>
 {% endif %}
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card #ef9a9a red lighten-3">
+            <div class="card-content">
+                <div class="section">
+                    <h2>Add a Comment</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="section">
+                    <form action="{% url 'add_game_comment' game.id %}" method="POST">
+                        {% csrf_token %}
+                        <textarea name="body"></textarea>
+                        <br>
+                        <input type="submit" value="Leave a Comment" class="btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card #ef9a9a red lighten-3">
+            <div class="card-content">
+                <div class="section">
+                    <h2>Comments</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="section">
+                    {% for comment in comments %}
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-content">
+                                <p>{{ comment.body }}</p>
+                                <p>By {{ comment.user.username }} on {{ comment.date }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div class="card-panel">No Comments Yet</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
