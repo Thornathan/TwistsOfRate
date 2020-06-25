@@ -20,7 +20,7 @@
             <span class="card-title">Comment</span>
             <form action="{% url 'add_blog_comment' blog.id %}" method="POST">
                 {% csrf_token %}
-                <textarea name="new_blog_comment"></textarea>
+                <textarea name="body"></textarea>
                 <br>
                 <input type="submit" value="Leave a Comment" class="btn">
             </form>
@@ -28,8 +28,8 @@
     </div>
 </div>
 <br>
-<p>Comments: {{ blog.comment.count }}</p>
-{% for comment in blog.comments_set.all %}
+<!-- <p>Comments: {{ blog.comment.count }}</p> -->
+{% for comment in blog.blogcomment_set.all %}
     <div class="row">
         <div class="card">
             <div class="card-content">
