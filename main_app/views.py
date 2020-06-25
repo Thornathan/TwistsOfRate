@@ -5,8 +5,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Console, Game, Blog, BlogComment
-from .forms import CommentForm
+from .models import Console, Game, Blog, BlogComment, GameComment
+from .forms import CommentForm, GCommentForm
 import uuid
 import boto3
 import requests
@@ -120,7 +120,14 @@ def add_blog_comment(request, blog_id):
     new_comment.blog_id = blog_id
     new_comment.user = request.user
     new_comment.save()
-  else:
-    print(request.POST)
-    print(form.errors)
   return redirect('blog_detail', blog_id=blog_id)
+
+def add_game_comment(request, game_id):
+  form = GCommentForm(request.POST)
+  if form.is_valid():
+    new_comment = form.save(commit=False)
+    new_comment.game_id = game_id
+    new_comment.user = request.user
+    new_comment.save()
+  return redirect('game_detail', game_id=game_id)
+

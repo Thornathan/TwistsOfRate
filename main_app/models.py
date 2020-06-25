@@ -30,7 +30,7 @@ class Console(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
-    date = models.DateField().auto_now
+    date = models.DateField(auto_now=True)
     body = models.TextField()
     console = models.ForeignKey(Console, on_delete=models.CASCADE)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
@@ -43,6 +43,15 @@ class BlogComment(models.Model):
     body = models.TextField(max_length=350)
     date = models.DateField(auto_now=True)
     blog = models.ForeignKey(Blog, null=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.body
+
+class GameComment(models.Model):
+    body = models.TextField(max_length=350)
+    date = models.DateField(auto_now=True)
+    game = models.ForeignKey(Game, null=True, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
