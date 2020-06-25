@@ -1,26 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="valign-center">
-    <h1>Consoles</h1>
-    <br>
-    <p>This is the sorting link bar</p>
-    <br>
-    <div class="row">
-        {% for console in consoles %}
-            <a href="{% url 'console_detail' console.id %}">
-                <div class="col s4">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title">{{ console.name }}</span>
-                            <p>Manufacturer: {{ console.manufacturer }}</p>
-                            <p>Release Date: {{ console.release }}</p>
-                        </div>
+<div class="row">
+    {% for console in consoles %}
+    <div>
+        <a href="{% url 'console_detail' console.id %}">
+            <div class="col s12 m6 l6">
+                <div class="card #ef9a9a red lighten-3">
+                    <div class="card-content">
+                        <img src={{ console.image_background }} id="cardImgs">
+                        <span class="card-title" id="cardTitle">{{ console.name }}</span>
+                        <p>Games Made: {{ console.games_count }}</p>
                     </div>
                 </div>
-            </a>
-        {% endfor %}
+            </div>
+        </a>
     </div>
+    {% endfor %}
 </div>
 
 {% endblock %}
