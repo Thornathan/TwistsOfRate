@@ -13,6 +13,8 @@ urlpatterns = [
     path('games/<int:game_id>/add_game_comment/', views.add_game_comment, name='add_game_comment'),
     path('blogs/', views.blogs_index, name='blogs_index'),
     path('blogs/<int:blog_id>/',  views.blog_detail, name='blog_detail'),
+    path('blogs/create/',  views.BlogCreate.as_view(), name='blogs_create'),
+    path('blogs/<int:pk>/update/',  views.BlogUpdate.as_view(), name='blogs_update'),
     path('blogs/<int:blog_id>/add_blog_comment/', views.add_blog_comment, name='add_blog_comment'),
     path('accounts/signup/', views.signup, name='signup'),
 ]

@@ -131,3 +131,12 @@ def add_game_comment(request, game_id):
     new_comment.save()
   return redirect('game_detail', game_id=game_id)
 
+class BlogCreate(CreateView):
+  model = Blog
+  fields = ['title', 'body']
+  success_url = '/blogs/'
+
+class BlogUpdate(UpdateView):
+  model = Blog
+  fields = ['title', 'body']
+

@@ -10,6 +10,7 @@
                 <li>{{ blog.date }}</li>
                 <li>{{ blog.body }}</li>
             </ul>
+            <a href="" class="btn">Edit Blog</a>
         </div>
     </div>
 </div>
@@ -28,7 +29,6 @@
     </div>
 </div>
 <br>
-<!-- <p>Comments: {{ blog.comment.count }}</p> -->
 {% for comment in blog.blogcomment_set.all %}
     <div class="row">
         <div class="card">
