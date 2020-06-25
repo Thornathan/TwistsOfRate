@@ -33,7 +33,7 @@
         </ul>
         <!-- Heading Center -->
         <div class="brand-logo center">
-          <ul class="right hide-on-med-and-down">
+          <ul class="right hide-on-small-only">
             <li class="{% if request.resolver_match.url_name == "about" %}active{% endif %}"><a
                 href="{% url 'about' %}">About</a></li>
             <li class="{% if request.resolver_match.url_name == "consoles_index" %}active{% endif %}"><a
@@ -47,7 +47,7 @@
           </ul>
         </div>
         <!-- Heading Right -->
-        <ul class="brand-logo right hide-on-med-and-down">
+        <ul class="brand-logo right hide-on-small-only">
           {% if user.is_authenticated %}
           <li class="{% if request.resolver_match.url_name == "logout" %}active{% endif %}"><a
               href="{% url 'logout' %}">Log Out</a></li>
@@ -60,7 +60,7 @@
         </ul>
 
         <!-- creates hamburger -->
-        <div class="nav-wrapper right-align hide-on-large-only" id="hamburger">
+        <div class="nav-wrapper right-align hide-on-med-and-up" id="hamburger">
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="right material-icons">menu</i></a>
         </div>
     </nav>
