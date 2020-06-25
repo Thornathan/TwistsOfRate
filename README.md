@@ -26,11 +26,15 @@ ______________________________________________________________________
 ______________________________________________________________________
 ## Getting Started
 ______________________________________________________________________
-Below are the links to the *Trello Board* and to our *TwistsOfRate* app. Enjoy!
+## Below are the links to the *Trello Board* and to our *TwistsOfRate* app. Enjoy!
 
 [Trello](https://docs.google.com/presentation/d/1S8-bwzKLaWdXhisrUhPEQS5aqYE8xsLpsuVTx2VMgpY/edit#slide=id.g89166a4c25_2_15)
 
 [TwistsOfRate](https://twists-of-rate.herokuapp.com/)
 ______________________________________________________________________
-## Ice Box/Next Steps
+## Potential Next Steps: 
+
+##### - [x] Add an api 
+##### - [x] Use AWS for images
+##### - [] Additional Media Queries 
 ______________________________________________________________________
