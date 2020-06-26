@@ -14,39 +14,51 @@ ______________________________________________________________________
 
 ### TwistsOfRate Home Sceenshot
 [Home](https://i.imgur.com/w3gqA6x.jpg)
+![Home](screenshots/home.png)
 
 ### TwistsOfRate About Sceenshot
 [About](https://i.imgur.com/aYazo82.png)
+![About](screenshots/about.png)
 
 ### TwistsOfRate Console Sceenshot
 [Console](https://i.imgur.com/XbtRZYm.jpg)
+![Console](screenshots/console.png)
 
 ### TwistsOfRate Console Details Sceenshot
 [Console Details](https://i.imgur.com/CDbBwFA.jpg)
+![Console Details](screenshots/ConsoleDetails.png)
 
 ### TwistsOfRate Genre Sceenshot
 [Genre](https://i.imgur.com/cbH4p6X.jpg)
+![Genre](screenshots/genre.png)
 
 ### TwistsOfRate Genre Details Sceenshot
 [Imgur](https://i.imgur.com/GDxY7H5.jpg)
+![Genre Details](screenshots/genreDetail.png)
 
 ### TwistsOfRate Games Sceenshot
 [Games](https://i.imgur.com/yZsEjYs.jpg)
+![Games](screenshots/games.png)
 
 ### TwistsOfRate Games Details Sceenshot
 [Game Details](https://i.imgur.com/jB1gcFr.jpg)
+![Games](screenshots/GameDetails.png)
 
 ### TwistsOfRate Blogs Sceenshot
 [Blogs](https://i.imgur.com/4J4Jvig.png)
+![Games](screenshots/blogs.png)
 
 ### TwistsOfRate Add Blogs Sceenshot
 [Add Blog](https://i.imgur.com/YiubKe8.png)
+![Games](screenshots/addBlog.png)
 
 ### TwistsOfRate Sign In Sceenshot
 [Sign In](https://i.imgur.com/L7VfFQa.png)
+![Games](screenshots/signin.png)
 
 ### TwistsOfRate Sign In Sceenshot
 [Sign Up](https://i.imgur.com/PEgJAPU.png)
+![Games](screenshots/signup.png)
 
 ______________________________________________________________________
 ## Technologies Used
