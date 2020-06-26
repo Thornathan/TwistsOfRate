@@ -7,52 +7,50 @@
 <br>
 
 <div class="row">
-    <div class="row">
     <h2>Recent Releases</h2>
-    {% for release in releases %}
+    <div class="row">
+        {% for release in releases %}
         <a href="{% url 'game_detail' release.id %}">
-            <div class="col s12 m4 l4">
+            <div class="col s12 m6 l4">
                 <div class="card #ef9a9a red lighten-3">
                     <div class="card-content">
                         <img src={{ release.background_image }} id="cardImgs">
                         <span class="card-title" id="cardTitle">{{ release.name }}</span>
                     </div>
                 </div>
-            </div> 
+            </div>
         </a>
-    {% endfor %}
-</div>
-<div class="row">
-    <div class="row">
+        {% endfor %}
+    </div>
     <h2>Highest Rated</h2>
-    {% for rating in ratings %}
+    <div class="row">
+        {% for rating in ratings %}
         <a href="{% url 'game_detail' rating.id %}">
-            <div class="col s12 m4 l4">
+            <div class="col s12 m6 l4">
                 <div class="card #ef9a9a red lighten-3">
                     <div class="card-content">
                         <img src={{ rating.background_image }} id="cardImgs">
                         <span class="card-title" id="cardTitle">{{ rating.name }}</span>
                     </div>
                 </div>
-            </div> 
+            </div>
         </a>
-    {% endfor %}
-</div>
-<div class="row">
-    <div class="row">
+        {% endfor %}
+    </div>
     <h2>Most Anticipated Upcoming Games</h2>
-    {% for game in games %}
+    <div class="row">
+        {% for game in games %}
         <a href="{% url 'game_detail' game.id %}">
-            <div class="col s12 m4 l4">
+            <div class="col s12 m6 l4">
                 <div class="card #ef9a9a red lighten-3">
                     <div class="card-content">
                         <img src={{ game.background_image }} id="cardImgs">
                         <span class="card-title" id="cardTitle">{{ game.name }}</span>
                     </div>
                 </div>
-            </div> 
+            </div>
         </a>
-    {% endfor %}
-</div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

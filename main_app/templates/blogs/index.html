@@ -12,7 +12,7 @@
         {% for blog in blogs %}
             <a href="{% url 'blog_detail' blog.id %}">
                 <div class="col s4">
-                    <div class="card">
+                    <div class="card #ef9a9a red lighten-3">
                         <div class="card-content">
                             <span class="card-title">{{ blog.title }}</span>
                             <p>By: {{ blog.user.username }}</p>

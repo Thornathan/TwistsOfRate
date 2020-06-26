@@ -11,8 +11,6 @@ import uuid
 import boto3
 import requests
 
-# Create your views here.
-
 def home(request):
 
   upcoming_games = "https://api.rawg.io/api/games?dates=2020-06-25,2020-10-10&page_size=6&ordering=-added"
@@ -194,3 +192,4 @@ class BlogUpdate(LoginRequiredMixin, UpdateView):
 class BlogDelete(LoginRequiredMixin, DeleteView):
   model = Blog
   success_url = '/blogs/'
+

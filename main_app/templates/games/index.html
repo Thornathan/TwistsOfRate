@@ -20,17 +20,17 @@
                         <div class="section">
                             <img src={{ game.background_image }} id="cardImgs">
                             <span class="card-title" id="cardTitle">{{ game.name }}</span>
+                            <div class="divider"></div>
                         </div>
-                        <div class="divider"></div>
                         <div class="section">
-                            <p>Genre:
+                            <p class="center">Genre:
                                 {% for genres in game.genres %}
                                 {{ genres.name }}.
                                 {% endfor %}
                             </p>
-                            <p>Release Date: {{ game.released }}</p>
-                            <p>Rating: {{game.rating}}</p>
-                            <p>Metacritic: {{game.metacritic}}
+                            <p class="center">Release Date: {{ game.released }}</p>
+                            <p class="center">Rating: {{game.rating}}</p>
+                            <p class="center">Metacritic: {{game.metacritic}}
                         </div>
                     </div>
                 </div>

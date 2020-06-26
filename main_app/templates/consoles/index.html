@@ -8,9 +8,14 @@
             <div class="col s12 m6 l6">
                 <div class="card #ef9a9a red lighten-3">
                     <div class="card-content">
-                        <img src={{ console.image_background }} id="cardImgs">
-                        <span class="card-title" id="cardTitle">{{ console.name }}</span>
-                        <p>Games Made: {{ console.games_count }}</p>
+                        <div class="section">
+                            <img src={{ console.image_background }} id="cardImgs">
+                            <span class="card-title" id="cardTitle">{{ console.name }}</span>
+                            <div class="divider"></div>
+                        </div>
+                        <div class="section">
+                            <p class="center">Games Made: {{ console.games_count }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
