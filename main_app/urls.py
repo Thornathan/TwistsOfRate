@@ -11,9 +11,6 @@ urlpatterns = [
     path('games/', views.games_index, name='games_index'),
     path('games/<int:game_id>/', views.game_detail, name='game_detail'),
     path('games/<int:game_id>/add_game_comment/', views.add_game_comment, name='add_game_comment'),
-    # new
-    # path('cats/<int:cat_id>/add_photo/', views.add_photo, name='add_photo'),
-    # ^^^^
     path('blogs/', views.blogs_index, name='blogs_index'),
     path('blogs/<int:blog_id>/',  views.blog_detail, name='blog_detail'),
     path('blogs/create/',  views.BlogCreate.as_view(), name='blogs_create'),

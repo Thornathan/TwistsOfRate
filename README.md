@@ -7,6 +7,18 @@ Hello! We are Ryan Nash, Jonathan Lane and David Sheinbein, three individuals wi
 ______________________________________________________________________
 ## Screenshots
 ______________________________________________________________________
+### TwistsOfRate Home Sceenshot
+![Home]( )
+### TwistsOfRate About Sceenshot
+![About]( )
+### TwistsOfRate Console Sceenshot
+![Console]( )
+### TwistsOfRate Genre Sceenshot
+![Genre]( )
+### TwistsOfRate Games Sceenshot
+![Games]( )
+### TwistsOfRate Blogs Sceenshot
+![Blogs]( )
 
 ______________________________________________________________________
 ## Technologies Used
@@ -35,6 +47,9 @@ ______________________________________________________________________
 ## Potential Next Steps: 
 
 ##### - [x] Add an api 
-##### - [x] Use AWS for images
-##### - [] Additional Media Queries 
+##### - [x] Optimize css for PC
+##### - [x] Optimize css for Ipad
+##### - [x] Optimize css for Mobile
+##### - [] Use AWS for images
+
 ______________________________________________________________________
