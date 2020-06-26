@@ -134,7 +134,6 @@ h6 {
 }
 
 /* Card content */
-
 .card {
   /* height: 35vh auto; */
 }
@@ -269,7 +268,6 @@ form ul li {
     font-family: 'Pacifico', cursive; 
     color: #555555;
   }
-
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -298,7 +296,6 @@ form ul li {
     width: 2rem;
   }
 }
-
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   html{

@@ -3,7 +3,6 @@ from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User
 
-
 class Game(models.Model):
     name = models.CharField(max_length=100)
     genre = models.CharField(max_length=100)
@@ -32,7 +31,7 @@ class Blog(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('blog_detail', kwargs={'pk': self.id})
+        return reverse('blog_detail', kwargs={'blog_id': self.id})
 
 class BlogComment(models.Model):
     body = models.TextField(max_length=350)

@@ -1,7 +1,6 @@
 from django.forms import ModelForm
 from .models import BlogComment, GameComment, ConsoleComment
 
-
 class CommentForm(ModelForm):
   class Meta:
     model = BlogComment
