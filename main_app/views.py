@@ -12,7 +12,6 @@ import boto3
 import requests
 
 def home(request):
-
   upcoming_games = "https://api.rawg.io/api/games?dates=2020-06-25,2020-10-10&page_size=6&ordering=-added"
   recent_releases = "https://api.rawg.io/api/games?dates=2020-05-20,2020-06-24&page_size=6&ordering=-added"
   highest_rated = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&page_size=6&ordering=-added"
@@ -112,7 +111,6 @@ def genres_index(request):
   return render(request, 'genres/index.html', {'genres': genres})
 
 def genres_detail(request, genre_id):
-
   url = f"https://rawg-video-games-database.p.rapidapi.com/genres/{genre_id}"
 
   headers = {
@@ -192,4 +190,3 @@ class BlogUpdate(LoginRequiredMixin, UpdateView):
 class BlogDelete(LoginRequiredMixin, DeleteView):
   model = Blog
   success_url = '/blogs/'
-
