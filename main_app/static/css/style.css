@@ -1,3 +1,15 @@
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 html {
   height: 100%;
   background: linear-gradient(90deg, rgba(115,206,201,1) 35%, rgba(93,193,191,1) 100%);
@@ -25,6 +37,7 @@ main {
   flex: 1 0 auto;
   font-family: 'Oswald', sans-serif;
   padding-top: 4px;
+  animation: transitionIn 0.75s;
 }
 
 /* Nav */
@@ -134,9 +147,6 @@ h6 {
 }
 
 /* Card content */
-.card {
-  /* height: 35vh auto; */
-}
 
 .card-content ul li {
   top: 0px;
