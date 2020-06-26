@@ -145,9 +145,19 @@ def add_blog_comment(request, blog_id):
   return redirect('blog_detail', blog_id=blog_id)
 
 @login_required
-def edit_blog_comment(request, comment_id):
-  user_id = request.user.id
-  return redirect('blog_detail', { 'comment_id':comment_id, 'user_id': user_id })
+def edit_blog_comment(request, blog_id, comment_id):
+  form = CommentForm(request.POST)
+  comment = BlogComment.objects.get(id=comment_id)
+  if form.is_valid():
+    body = form.cleaned_data['body']
+    comment.body = body
+    comment.save()
+  return redirect('blog_detail', blog_id=blog_id)
+
+@login_required
+def delete_blog_comment(request, blog_id, comment_id):
+  BlogComment.objects.filter(id=comment_id).delete()
+  return redirect('blog_detail', blog_id=blog_id)
 
 @login_required
 def add_game_comment(request, game_id):

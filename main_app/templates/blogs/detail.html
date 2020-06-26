@@ -21,13 +21,13 @@
     <div class="card">
         <div class="card-content">
             {% if comment.user.id|stringformat:"i" == user_id|stringformat:"i" %}
-                <form action="{% url 'edit_blog_comment' comment.id %}" method="POST">
+                <form action="{% url 'edit_blog_comment' blog.id comment.id %}" method="POST">
                     {% csrf_token %}
                     <input name="body" value="{{ comment.body }}">
                     <p>By {{ comment.user.username }} on {{ comment.date }}</p>
                     <input type="submit" class="btn" id="btnBlogs" value="Edit Comment">
                 </form>
-                <a href="" class="btn" id="btnBlogs">Delete</a>
+                <a href="{% url 'delete_blog_comment' blog.id comment.id %}" class="btn" id="btnBlogs">Delete</a>
             {% else %}
                 <p>{{ comment.body }}</p>
                 <p>By {{ comment.user.username }} on {{ comment.date }}</p>
