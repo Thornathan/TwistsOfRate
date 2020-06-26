@@ -13,22 +13,40 @@ ______________________________________________________________________
 ______________________________________________________________________
 
 ### TwistsOfRate Home Sceenshot
-![Home]( )
+![Home](https://imgur.com/w3gqA6x)
 
 ### TwistsOfRate About Sceenshot
-![About]( )
+![About](https://imgur.com/aYazo82)
 
 ### TwistsOfRate Console Sceenshot
-![Console]( )
+![Console](https://imgur.com/XbtRZYm)
+
+### TwistsOfRate Console Details Sceenshot
+![Console Details](https://imgur.com/CDbBwFA)
 
 ### TwistsOfRate Genre Sceenshot
-![Genre]( )
+![Genre](https://imgur.com/cbH4p6X)
+
+### TwistsOfRate Genre Details Sceenshot
+![Genre Details](https://imgur.com/GDxY7H5)
 
 ### TwistsOfRate Games Sceenshot
-![Games]( )
+![Games](https://imgur.com/yZsEjYs)
+
+### TwistsOfRate Games Details Sceenshot
+![Games Details](https://imgur.com/jB1gcFr)
 
 ### TwistsOfRate Blogs Sceenshot
-![Blogs]( )
+![Blogs](https://imgur.com/4J4Jvig)
+
+### TwistsOfRate Add Blogs Sceenshot
+![Add Blogs](https://imgur.com/YiubKe8)
+
+### TwistsOfRate Sign In Sceenshot
+![Sign In](https://imgur.com/L7VfFQa)
+
+### TwistsOfRate Sign In Sceenshot
+![Sign up](https://imgur.com/PEgJAPU)
 
 ______________________________________________________________________
 ## Technologies Used
@@ -46,9 +64,22 @@ ______________________________________________________________________
 * AWS
 
 ______________________________________________________________________
+## Roles
+______________________________________________________________________
+
+* Scrum Master: the leader of the Agile processes (user stories, stand-ups, etc.) and manager of Trello.
+* GitHub Manager: the primary person for managing the repo and GitHub team workflow (merging pull requests, etc.).
+* Documenter: the person in charge of the README, etc.
+* Designer: the person in charge of UI design/layout and styling.
+* Database manager: this person will be in charge of creating and managing the models and their relationships.
+* API Manager: the person in charge of researching, registering with, etc. APIs.
+
+______________________________________________________________________
 ## Getting Started
 ______________________________________________________________________
 ## Below are the links to the *Trello Board* and to our *TwistsOfRate* app. Enjoy!
+
+[Pitch Deck](https://docs.google.com/presentation/d/1S8-bwzKLaWdXhisrUhPEQS5aqYE8xsLpsuVTx2VMgpY/edit?usp=sharing)
 
 [Trello](https://docs.google.com/presentation/d/1S8-bwzKLaWdXhisrUhPEQS5aqYE8xsLpsuVTx2VMgpY/edit#slide=id.g89166a4c25_2_15)
 

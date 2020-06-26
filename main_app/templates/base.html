@@ -51,7 +51,7 @@
           <li class="{% if request.resolver_match.url_name == "signup" %}active{% endif %}"><a
               href="{% url 'signup' %}">Sign Up</a></li>
           <li class="{% if request.resolver_match.url_name == "login" %}active{% endif %}"><a
-              href="{% url 'login' %}">Log In</a></li>
+              href="{% url 'login' %}">Sign In</a></li>
           {% endif %}
         </ul>
 
@@ -85,7 +85,7 @@
       {% else %}
       <li class="{% if request.resolver_match.url_name == "signup" %}active{% endif %}"><a
           href="{% url 'signup' %}">Sign Up</a></li>
-      <li class="{% if request.resolver_match.url_name == "login" %}active{% endif %}"><a href="{% url 'login' %}">Log
+      <li class="{% if request.resolver_match.url_name == "login" %}active{% endif %}"><a href="{% url 'login' %}">Sign
           In</a></li>
       {% endif %}
     </ul>
