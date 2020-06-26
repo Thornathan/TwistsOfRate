@@ -4,8 +4,9 @@
 <div class="valign-center">
     <h1>Blogs</h1>
     <br>
+    {% if user.is_authenticated %}
     <a href="{% url 'blogs_create' %}" class="btn">Add a Blog</a>
-    <p>This is the sorting link bar</p>
+    {% endif %}
     <br>
     <div class="row">
         {% for blog in blogs %}
@@ -20,6 +21,18 @@
                     </div>
                 </div>
             </a>
+        {% empty %}
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="card #ef9a9a red lighten-3">
+                        <div class="card-content">
+                            <div class="section">
+                                <h6>There are no blog posts yet. Why not add one?</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
         {% endfor %}
     </div>
 </div>

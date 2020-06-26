@@ -16,6 +16,29 @@
     </div>
 </div>
 <br>
+{% for comment in blog.blogcomment_set.all %}
+<div class="row">
+    <div class="card">
+        <div class="card-content">
+            {% if comment.user.id|stringformat:"i" == user_id|stringformat:"i" %}
+                <form action="{% url 'edit_blog_comment' blog.id comment.id %}" method="POST">
+                    {% csrf_token %}
+                    <input name="body" value="{{ comment.body }}">
+                    <p>By {{ comment.user.username }} on {{ comment.date }}</p>
+                    <input type="submit" class="btn" id="btnBlogs" value="Edit Comment">
+                </form>
+                <a href="{% url 'delete_blog_comment' blog.id comment.id %}" class="btn" id="btnBlogs">Delete</a>
+            {% else %}
+                <p>{{ comment.body }}</p>
+                <p>By {{ comment.user.username }} on {{ comment.date }}</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% empty %}
+<div class="card-panel">No Comments Yet</div>
+{% endfor %}
+<br>
 <div class="row">
     <div class="card">
         <div class="card-content">
@@ -24,23 +47,14 @@
                 {% csrf_token %}
                 <textarea name="body"></textarea>
                 <br>
-                <input type="submit" value="Leave a Comment" class="btn">
+                {% if user.is_authenticated %}
+                    <input type="submit" value="Leave a Comment" class="btn">
+                {% else %}
+                    <input type="submit" value="Log In to Leave a Comment" class="btn">
+                {% endif %}
             </form>
         </div>
     </div>
 </div>
-<br>
-{% for comment in blog.blogcomment_set.all %}
-    <div class="row">
-        <div class="card">
-            <div class="card-content">
-                <p>{{ comment.body }}</p>
-                <p>By {{ comment.user.username }} on {{ comment.date }}</p>
-            </div>
-        </div>
-    </div>
-{% empty %}
-    <div class="card-panel">No Comments Yet</div>
-{% endfor %}
 
 {% endblock %}
