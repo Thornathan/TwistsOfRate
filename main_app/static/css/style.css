@@ -1,9 +1,26 @@
+@keyframes transitionIn {
+  from {
+    opactiy: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opactiy: 1;
+    transform: translateY(0);
+  }
+}
+
 html {
   height: 100%;
-  background: linear-gradient(90deg, rgba(115,206,201,1) 35%, rgba(93,193,191,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(115, 206, 201, 1) 35%,
+    rgba(93, 193, 191, 1) 100%
+  );
   box-sizing: border-box;
   width: 100%;
   height: auto;
+  animation: transitionIn 1.5s;
 }
 
 body {
@@ -11,33 +28,37 @@ body {
   min-height: 100vh;
   flex-direction: column;
   height: 100%;
-  background: url(/static/images/background1.svg); 
-  background-size: contain; 
+  background: url(/static/images/background1.svg);
+  background-size: contain;
   background-repeat: no-repeat;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   box-sizing: border-box;
   width: 100%;
   height: auto;
   min-width: 100%;
+  animation: transitionIn 2.5s;
 }
 
 main {
   flex: 1 0 auto;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   padding-top: 4px;
 }
 
-
 /* Nav */
 nav ul li a {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   color: #555555;
   font-weight: 900;
 }
 
 nav {
-  background: linear-gradient(90deg, rgba(255,111,111,.35) 35%, rgba(255,163,111,.35) 100%);
-  background-color: transparent; 
+  background: linear-gradient(
+    90deg,
+    rgba(255, 111, 111, 0.35) 35%,
+    rgba(255, 163, 111, 0.35) 100%
+  );
+  background-color: transparent;
 }
 
 ul li a {
@@ -46,14 +67,14 @@ ul li a {
 
 .active {
   text-decoration: underline;
-  background-color: rgba(255,111,111,.50);
+  background-color: rgba(255, 111, 111, 0.5);
   color: white;
   font-weight: 900;
 }
 
 /* Logo */
 a.left.brand-logo {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   font-size: 1.75rem;
   color: #555555;
 }
@@ -70,7 +91,7 @@ a.left.brand-logo {
 
 /* Sidenav */
 #sideNavLogoTxt {
-  font-family: 'Pacifico', cursive; 
+  font-family: "Pacifico", cursive;
   font-size: 2rem;
 }
 
@@ -81,15 +102,19 @@ a.left.brand-logo {
 .sidenav {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(90deg, rgba(255,111,111,.90) 35%, rgba(255,163,111,.75) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 111, 111, 0.9) 35%,
+    rgba(255, 163, 111, 0.75) 100%
+  );
   justify-content: start;
   text-align: center;
 }
 
 /* footer */
 .page-footer {
-  color: #6FFFE9;
-  background-color: #3A506B;
+  color: #6fffe9;
+  background-color: #3a506b;
 }
 
 /* footer */
@@ -104,14 +129,14 @@ footer.page-footer {
 
 /* body content */
 h1 {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   font-weight: 900;
   text-align: center;
   font-size: 4rem;
 }
 
 h2 {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   text-align: center;
   font-size: 2.5rem;
   text-decoration: underline;
@@ -119,7 +144,7 @@ h2 {
 }
 
 h5 {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 600;
   text-align: center;
   font-size: 1.5rem;
@@ -142,7 +167,7 @@ h6 {
 
 .card-content ul li {
   top: 0px;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 12px;
   font-weight: 100;
 }
@@ -189,7 +214,7 @@ h6 {
 /* Img on home screen */
 #homeImg {
   width: 100%;
-  height: auto; 
+  height: auto;
   object-fit: cover;
 }
 
@@ -217,7 +242,7 @@ label {
 }
 
 #btnBlogs {
-  background-color: #6FFFE9;
+  background-color: #6fffe9;
   color: #555555;
   border-radius: 20px;
 }
@@ -226,27 +251,40 @@ label {
   text-align: center;
 }
 
-#platformSect, #storeSect {
+#platformSect,
+#storeSect {
   text-align: center;
 }
 
-input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+input:not([type]),
+input[type="text"]:not(.browser-default),
+input[type="password"]:not(.browser-default),
+input[type="email"]:not(.browser-default),
+input[type="url"]:not(.browser-default),
+input[type="time"]:not(.browser-default),
+input[type="date"]:not(.browser-default),
+input[type="datetime"]:not(.browser-default),
+input[type="datetime-local"]:not(.browser-default),
+input[type="tel"]:not(.browser-default),
+input[type="number"]:not(.browser-default),
+input[type="search"]:not(.browser-default),
+textarea.materialize-textarea {
   border-bottom: 1px solid #ef9a9a;
 }
 
 .helptext {
   font-style: italic;
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 form ul li {
   font-style: italic;
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px)  {
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
   body {
-    background: url(/static/images/background2.svg); 
+    background: url(/static/images/background2.svg);
     background-repeat: no-repeat;
     width: 100%;
     height: auto;
@@ -255,8 +293,12 @@ form ul li {
   }
 
   nav {
-    background: linear-gradient(-90deg, rgba(88,207,235,0.50) 50%, rgba(215,247,255,0.25) 100%);
-    background-color: transparent; 
+    background: linear-gradient(
+      -90deg,
+      rgba(88, 207, 235, 0.5) 50%,
+      rgba(215, 247, 255, 0.25) 100%
+    );
+    background-color: transparent;
   }
 
   /* Nav bar text */
@@ -267,15 +309,14 @@ form ul li {
   /* Logo */
   a.left.brand-logo {
     font-size: 2rem;
-    font-family: 'Pacifico', cursive; 
+    font-family: "Pacifico", cursive;
     color: #555555;
   }
-
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   body {
-    background: url(/static/images/background3.svg); 
+    background: url(/static/images/background3.svg);
     background-repeat: no-repeat;
     width: 100%;
     height: auto;
@@ -284,14 +325,18 @@ form ul li {
   }
 
   nav {
-    background: linear-gradient(90deg, rgba(111,255,166,.10) 35%, rgba(111,255,144,.25) 100%);
-    background-color: transparent; 
+    background: linear-gradient(
+      90deg,
+      rgba(111, 255, 166, 0.1) 35%,
+      rgba(111, 255, 144, 0.25) 100%
+    );
+    background-color: transparent;
   }
 
   /* Logo */
   a.left.brand-logo {
     font-size: 1.5rem;
-    font-family: 'Pacifico', cursive; 
+    font-family: "Pacifico", cursive;
     color: #555555;
   }
 
@@ -300,15 +345,14 @@ form ul li {
   }
 }
 
-
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  html{
+  html {
     width: 100%;
     height: auto;
   }
 
   body {
-    background: url(/static/images/background3.svg); 
+    background: url(/static/images/background3.svg);
     background-repeat: no-repeat;
     width: 100%;
     height: auto;
@@ -317,14 +361,18 @@ form ul li {
   }
 
   nav {
-    background: linear-gradient(90deg, rgba(111,255,166,.50) 35%, rgba(111,255,144,.25) 100%);
-    background-color: transparent; 
+    background: linear-gradient(
+      90deg,
+      rgba(111, 255, 166, 0.5) 35%,
+      rgba(111, 255, 144, 0.25) 100%
+    );
+    background-color: transparent;
   }
 
   /* Logo */
   a.left.brand-logo {
     font-size: 1.25rem;
-    font-family: 'Pacifico', cursive; 
+    font-family: "Pacifico", cursive;
     color: #555555;
     height: 100%;
     position: relative;
@@ -339,16 +387,16 @@ form ul li {
 
   #homeImg {
     width: 100%;
-    height: auto; 
+    height: auto;
     object-fit: cover;
   }
 
   h1 {
     font-size: 3rem;
   }
-  
+
   .card-content ul li {
-    font-family: 'Oswald', sans-serif;
+    font-family: "Oswald", sans-serif;
     font-size: 10px;
     font-weight: 100;
   }
