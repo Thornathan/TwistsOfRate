@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import BlogComment, GameComment
+from .models import BlogComment, GameComment, ConsoleComment
 
 
 class CommentForm(ModelForm):
@@ -12,3 +12,7 @@ class GCommentForm(ModelForm):
         model = GameComment
         fields = ['body']
 
+class CCommentForm(ModelForm):
+    class Meta:
+        model = ConsoleComment
+        fields = ['body']
